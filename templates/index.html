@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="hero">
+  <p class="eyebrow">アニメ、どこで配信してるか毎回検索してませんか?</p>
+  <h1>そのアニメ、<span class="hl">どこで見れる?</span></h1>
+  <p class="hero-sub">正規配信サービスだけをまとめて検索。違法サイトは一切扱いません。</p>
+</section>
+
+<section class="list-wrap">
+  {% if query %}
+    <p class="result-count">「{{ query }}」の検索結果: {{ anime_list|length }}件</p>
+  {% endif %}
+
+  {% if anime_list %}
+  <div class="anime-grid">
+    {% for anime in anime_list %}
+    <a class="anime-card" href="/anime/{{ anime['slug'] }}">
+      {% if anime['is_airing'] %}<span class="badge-airing">放送中</span>{% endif %}
+      <h2>{{ anime['title'] }}</h2>
+      <p class="card-meta">{{ anime['release_year'] }}年 ・ 全{{ anime['episode_count'] }}話</p>
+      <p class="card-genre">{{ anime['genre'] }}</p>
+    </a>
+    {% endfor %}
+  </div>
+  {% else %}
+  <p class="empty-state">該当する作品が見つかりませんでした。別のキーワードで試してみてください。</p>
+  {% endif %}
+</section>
+{% endblock %}

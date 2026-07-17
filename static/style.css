@@ -1,0 +1,258 @@
+:root {
+  --bg: #0F1117;
+  --bg-card: #171A24;
+  --ink: #F5F6FA;
+  --ink-dim: #8A8FA3;
+  --magenta: #FF3E7F;
+  --cyan: #34E4EA;
+  --line: #262A38;
+  --font-display: 'Plus Jakarta Sans', sans-serif;
+  --font-body: 'Inter', sans-serif;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+}
+
+a { color: inherit; text-decoration: none; }
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.1rem 1.5rem;
+  border-bottom: 1px solid var(--line);
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.logo {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 1.2rem;
+  letter-spacing: 0.02em;
+}
+
+.logo-dot { color: var(--magenta); }
+
+.search-form {
+  display: flex;
+  gap: 0.5rem;
+  flex: 1;
+  max-width: 360px;
+}
+
+.search-form input {
+  flex: 1;
+  background: var(--bg-card);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 0.55rem 0.9rem;
+  color: var(--ink);
+  font-family: var(--font-body);
+}
+
+.search-form input:focus {
+  outline: none;
+  border-color: var(--magenta);
+}
+
+.search-form button {
+  background: var(--magenta);
+  color: #0F1117;
+  border: none;
+  border-radius: 8px;
+  padding: 0.55rem 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+main {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 1.5rem 4rem;
+}
+
+.hero {
+  padding: 3rem 0 2rem;
+  text-align: center;
+}
+
+.eyebrow {
+  font-size: 0.85rem;
+  color: var(--cyan);
+  margin-bottom: 0.6rem;
+}
+
+.hero h1 {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 6vw, 2.8rem);
+  margin: 0 0 0.8rem;
+  font-weight: 800;
+}
+
+.hl { color: var(--magenta); }
+
+.hero-sub {
+  color: var(--ink-dim);
+  max-width: 40ch;
+  margin: 0 auto;
+}
+
+.result-count {
+  color: var(--ink-dim);
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+}
+
+.anime-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1rem;
+}
+
+.anime-card {
+  background: var(--bg-card);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 1.3rem;
+  position: relative;
+  transition: border-color 0.15s ease, transform 0.15s ease;
+}
+
+.anime-card:hover {
+  border-color: var(--magenta);
+  transform: translateY(-2px);
+}
+
+.anime-card h2 {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  margin: 0.4rem 0 0.5rem;
+}
+
+.card-meta {
+  color: var(--ink-dim);
+  font-size: 0.8rem;
+  margin: 0 0 0.3rem;
+}
+
+.card-genre {
+  color: var(--cyan);
+  font-size: 0.75rem;
+  margin: 0;
+}
+
+.badge-airing {
+  display: inline-block;
+  background: var(--magenta);
+  color: #0F1117;
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 0.15rem 0.6rem;
+  border-radius: 999px;
+}
+
+.empty-state {
+  color: var(--ink-dim);
+  text-align: center;
+  padding: 3rem 0;
+}
+
+/* 詳細ページ */
+.detail { padding-top: 2.5rem; }
+
+.detail-head h1 {
+  font-family: var(--font-display);
+  font-size: clamp(1.6rem, 5vw, 2.2rem);
+  margin: 0.6rem 0 0.4rem;
+}
+
+.detail-meta {
+  color: var(--ink-dim);
+  font-size: 0.9rem;
+  margin: 0 0 1.5rem;
+}
+
+.detail-synopsis {
+  line-height: 1.9;
+  color: var(--ink);
+  margin-bottom: 2rem;
+}
+
+.section-title {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 0.6rem;
+  margin-bottom: 1rem;
+}
+
+.service-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+
+.service-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  background: var(--bg-card);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 1rem 1.2rem;
+  transition: border-color 0.15s ease;
+}
+
+.service-row:hover { border-color: var(--cyan); }
+
+.service-name {
+  font-weight: 600;
+  font-family: var(--font-display);
+}
+
+.plan-badge {
+  font-size: 0.75rem;
+  padding: 0.25rem 0.7rem;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+
+.plan-free { background: rgba(52, 228, 234, 0.15); color: var(--cyan); }
+.plan-subscription { background: rgba(255, 62, 127, 0.15); color: var(--magenta); }
+.plan-paid { background: rgba(138, 143, 163, 0.2); color: var(--ink-dim); }
+
+.go-arrow {
+  color: var(--ink-dim);
+  font-size: 0.85rem;
+  white-space: nowrap;
+}
+
+.verified-note {
+  color: var(--ink-dim);
+  font-size: 0.75rem;
+  margin-top: 1rem;
+}
+
+.back-link {
+  display: inline-block;
+  margin-top: 2.5rem;
+  color: var(--cyan);
+  font-size: 0.9rem;
+}
+
+footer {
+  text-align: center;
+  color: var(--ink-dim);
+  font-size: 0.72rem;
+  padding: 2rem 1.5rem;
+  border-top: 1px solid var(--line);
+}

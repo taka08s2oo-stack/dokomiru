@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% block title %}{{ anime['title'] }}はどこで見れる?配信サービス一覧 | DOKOMIRU{% endblock %}
+{% block description %}{{ anime['title'] }}が視聴できる配信サービスをまとめました。Abema、Netflix、dアニメストアなど正規サービスのみ掲載。{% endblock %}
+
+{% block content %}
+<article class="detail">
+  <div class="detail-head">
+    {% if anime['is_airing'] %}<span class="badge-airing">放送中</span>{% endif %}
+    <h1>{{ anime['title'] }}</h1>
+    <p class="detail-meta">{{ anime['release_year'] }}年 ・ 全{{ anime['episode_count'] }}話 ・ {{ anime['genre'] }}</p>
+  </div>
+
+  <p class="detail-synopsis">{{ anime['synopsis'] }}</p>
+
+  <h2 class="section-title">配信サービス一覧</h2>
+
+  {% if availability %}
+  <div class="service-list">
+    {% for a in availability %}
+    <a class="service-row" href="{{ a['watch_url'] }}" target="_blank" rel="noopener sponsored">
+      <span class="service-name">{{ a['service_name'] }}</span>
+      <span class="plan-badge plan-{{ a['plan_type'] }}">
+        {% if a['plan_type'] == 'free' %}見放題{% elif a['plan_type'] == 'subscription' %}サブスク内{% else %}都度課金{% endif %}
+      </span>
+      <span class="go-arrow">見る →</span>
+    </a>
+    {% endfor %}
+  </div>
+  <p class="verified-note">※ 配信状況は変更されることがあります。最終確認日の目安: {{ availability[0]['verified_at'][:10] }}</p>
+  {% else %}
+  <p class="empty-state">現在、配信情報が登録されていません。</p>
+  {% endif %}
+
+  <a class="back-link" href="/">← 検索に戻る</a>
+</article>
+{% endblock %}

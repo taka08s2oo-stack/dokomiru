@@ -41,6 +41,21 @@ a { color: inherit; text-decoration: none; }
 
 .logo-dot { color: var(--magenta); }
 
+.lang-switch {
+  font-size: 0.8rem;
+  color: var(--ink-dim);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 0.35rem 0.9rem;
+  white-space: nowrap;
+  transition: border-color 0.15s ease, color 0.15s ease;
+}
+
+.lang-switch:hover {
+  border-color: var(--cyan);
+  color: var(--cyan);
+}
+
 .search-form {
   display: flex;
   gap: 0.5rem;
@@ -109,6 +124,60 @@ main {
   color: var(--ink-dim);
   font-size: 0.9rem;
   margin-bottom: 1rem;
+}
+
+.filter-wrap {
+  padding-top: 0.5rem;
+}
+
+.filter-form {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  flex-wrap: wrap;
+  background: var(--bg-card);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 1rem 1.2rem;
+  margin-bottom: 1.5rem;
+}
+
+.filter-group {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.filter-group label {
+  font-size: 0.8rem;
+  color: var(--ink-dim);
+  white-space: nowrap;
+}
+
+.filter-group select {
+  background: var(--bg);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 0.45rem 0.7rem;
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  cursor: pointer;
+}
+
+.filter-group select:focus {
+  outline: none;
+  border-color: var(--cyan);
+}
+
+.filter-clear {
+  font-size: 0.8rem;
+  color: var(--magenta);
+  margin-left: auto;
+}
+
+.filter-clear:hover {
+  text-decoration: underline;
 }
 
 .anime-grid {
@@ -255,4 +324,78 @@ footer {
   font-size: 0.72rem;
   padding: 2rem 1.5rem;
   border-top: 1px solid var(--line);
+}
+
+.footer-nav {
+  margin-bottom: 0.6rem;
+  font-size: 0.8rem;
+}
+
+.footer-nav a {
+  color: var(--cyan);
+}
+
+.footer-nav a:hover {
+  text-decoration: underline;
+}
+
+.footer-sep {
+  color: var(--ink-dim);
+  margin: 0 0.4rem;
+}
+
+.legal-page {
+  padding-top: 2.5rem;
+  line-height: 1.9;
+}
+
+.legal-page h1 {
+  font-family: var(--font-display);
+  font-size: clamp(1.6rem, 5vw, 2.2rem);
+  margin: 0 0 0.4rem;
+}
+
+.legal-updated {
+  color: var(--ink-dim);
+  font-size: 0.85rem;
+  margin-bottom: 2rem;
+}
+
+.legal-page h2 {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  margin: 2rem 0 0.8rem;
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 0.5rem;
+}
+
+.legal-page p {
+  color: var(--ink);
+  margin: 0 0 1rem;
+}
+
+.legal-note {
+  color: var(--ink-dim);
+  font-size: 0.85rem;
+}
+
+.contact-box {
+  background: var(--bg-card);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 1.4rem;
+  margin: 1.5rem 0;
+}
+
+.contact-label {
+  color: var(--ink-dim);
+  font-size: 0.8rem;
+  margin: 0 0 0.4rem;
+}
+
+.contact-email {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  color: var(--magenta);
+  margin: 0;
 }

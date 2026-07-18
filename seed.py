@@ -1,33 +1,6 @@
 """
 初期データ投入スクリプト。
 
-【重要】ここに入っているアニメの「配信状況」はテンプレート動作確認用の
-サンプルデータです。実際の配信権は頻繁に変わるため、公開前に必ず
-公式サイトで最新情報を確認し、正しい内容に差し替えてください。
-"""
-import sqlite3
-
-DB_PATH = "anime_finder.db"
-
-
-def get_connection():
-    conn = sqlite3.connect(DB_PATH)
-    conn.execute("PRAGMA foreign_keys = ON")
-    conn.row_factory = sqlite3.Row
-    return conn
-
-
-def init_db():
-    conn = get_connection()
-    with open("schema.sql", encoding="utf-8") as f:
-        conn.executescript(f.read())
-    conn.commit()
-    conn.close()
-
-
-"""
-初期データ投入スクリプト。
-
 【重要】ここに入っている配信情報は2026年7月時点でWeb検索により確認した
 ものですが、配信権は今後も変わる可能性があります。公開前や定期的に、
 必ず公式サイトで最新情報を確認し、内容を更新してください。
@@ -68,6 +41,9 @@ ANIME = [
         "slug": "kimetsu-no-yaiba",
         "title": "鬼滅の刃",
         "title_kana": "きめつのやいば",
+        "title_en": 'Demon Slayer: Kimetsu no Yaiba',
+        "synopsis_en": 'After his family is slaughtered by a demon, Tanjiro sets out to become a demon slayer and find a cure for his younger sister Nezuko, who has been turned into a demon herself.',
+        "genre_en": 'Action, Fantasy',
         "synopsis": "家族を鬼に殺され、唯一生き残った妹も鬼にされてしまった少年が、"
                     "妹を人間に戻す方法を探しながら鬼殺隊士として鬼と戦っていく物語。",
         "episode_count": 26,
@@ -85,6 +61,9 @@ ANIME = [
         "slug": "jujutsu-kaisen",
         "title": "呪術廻戦",
         "title_kana": "じゅじゅつかいせん",
+        "title_en": 'Jujutsu Kaisen',
+        "synopsis_en": 'High schooler Yuji Itadori swallows a cursed talisman to save his friends and becomes host to a powerful curse, joining a secret organization that fights deadly curses.',
+        "genre_en": 'Action, Dark Fantasy',
         "synopsis": "特級呪物を飲み込んでしまった高校生が、呪術高専に入学し、"
                     "仲間たちと共に人々を脅かす呪いと戦っていくダークファンタジー。",
         "episode_count": 24,
@@ -102,6 +81,9 @@ ANIME = [
         "slug": "spy-family",
         "title": "SPY×FAMILY",
         "title_kana": "すぱいふぁみりー",
+        "title_en": 'SPY x FAMILY',
+        "synopsis_en": 'A top spy must build a fake family for a mission, unknowingly adopting a telepathic girl and marrying an assassin, as all three hide their secrets from one another.',
+        "genre_en": 'Comedy, Action',
         "synopsis": "凄腕スパイと殺し屋、そして人の心を読める少女が、"
                     "それぞれの正体を隠したまま偽装家族として暮らすホームコメディ。",
         "episode_count": 25,
@@ -120,6 +102,9 @@ ANIME = [
         "slug": "sousou-no-frieren",
         "title": "葬送のフリーレン",
         "title_kana": "そうそうのふりーれん",
+        "title_en": "Frieren: Beyond Journey's End",
+        "synopsis_en": "After the hero's party defeats the Demon King, the elf mage Frieren outlives her human companions and slowly comes to understand what their time together truly meant.",
+        "genre_en": 'Fantasy, Drama',
         "synopsis": "魔王を倒した勇者パーティーの魔法使いフリーレンが、"
                     "亡き仲間たちとの記憶と向き合いながら長い旅を続けるファンタジー。",
         "episode_count": 28,
@@ -138,6 +123,9 @@ ANIME = [
         "slug": "one-piece",
         "title": "ONE PIECE",
         "title_kana": "わんぴーす",
+        "title_en": 'One Piece',
+        "synopsis_en": 'Monkey D. Luffy sets sail with his crew in search of the legendary treasure One Piece, aiming to become the next Pirate King.',
+        "genre_en": 'Adventure, Action',
         "synopsis": "海賊王を目指す少年ルフィが、個性豊かな仲間たちと共に"
                     "大海原を冒険する、1999年放送開始の長寿アクション作品。",
         "episode_count": 1155,
@@ -155,6 +143,9 @@ ANIME = [
         "slug": "shingeki-no-kyojin",
         "title": "進撃の巨人",
         "title_kana": "しんげきのきょじん",
+        "title_en": 'Attack on Titan',
+        "synopsis_en": 'Humanity survives behind massive walls to escape man-eating Titans, until a boy who lost his mother to one vows to wipe them all out.',
+        "genre_en": 'Action, Dark Fantasy',
         "synopsis": "巨大な人型の巨人に人類が追い詰められる世界で、"
                     "家族を奪われた少年が仲間と共に巨人の脅威に立ち向かうダークファンタジー。",
         "episode_count": 25,
@@ -173,6 +164,9 @@ ANIME = [
         "slug": "boku-no-hero-academia",
         "title": "僕のヒーローアカデミア",
         "title_kana": "ぼくのひーろーあかでみあ",
+        "title_en": 'My Hero Academia',
+        "synopsis_en": 'In a world where most people have superpowers called Quirks, a powerless boy is chosen by the greatest hero to inherit his power and enrolls in a school for heroes.',
+        "genre_en": 'Action, School',
         "synopsis": "誰もが超常的な個性を持つ世界で、無個性に生まれた少年が"
                     "最高のヒーローを目指して成長していく学園アクション。",
         "episode_count": 13,
@@ -191,6 +185,9 @@ ANIME = [
         "slug": "meitantei-conan",
         "title": "名探偵コナン",
         "title_kana": "めいたんていこなん",
+        "title_en": 'Detective Conan (Case Closed)',
+        "synopsis_en": "A high school detective is shrunk into a child's body by a mysterious poison and continues solving cases undercover while searching for the organization responsible.",
+        "genre_en": 'Mystery, Detective',
         "synopsis": "謎の組織に薬を飲まされ小学生の姿にされてしまった高校生探偵が、"
                     "正体を隠しながら数々の難事件を解決していく国民的推理アニメ。",
         "episode_count": 1000,
@@ -209,6 +206,9 @@ ANIME = [
         "slug": "haikyuu",
         "title": "ハイキュー!!",
         "title_kana": "はいきゅー",
+        "title_en": 'Haikyu!!',
+        "synopsis_en": 'A short but determined boy joins his high school volleyball team, aiming to overcome his height disadvantage and reach the national championship.',
+        "genre_en": 'Sports, Youth',
         "synopsis": "身長にコンプレックスを抱く少年がバレーボールと出会い、"
                     "仲間たちと共に全国大会を目指していく青春スポーツアニメ。",
         "episode_count": 25,
@@ -228,6 +228,9 @@ ANIME = [
         "slug": "gotoubun-no-hanayome",
         "title": "五等分の花嫁",
         "title_kana": "ごとうぶんのはなよめ",
+        "title_en": 'The Quintessential Quintuplets',
+        "synopsis_en": 'A tutor is hired to help five identical quintuplet sisters pass their exams, though only one of them wants his help at first — and one of them is his future wife.',
+        "genre_en": 'Romantic Comedy, School',
         "synopsis": "勉強が苦手な五つ子姉妹の家庭教師を任された高校生が、"
                     "彼女たちとの交流を通じて絆を深めていくラブコメディ。",
         "episode_count": 12,
@@ -245,6 +248,9 @@ ANIME = [
         "slug": "chainsaw-man",
         "title": "チェンソーマン",
         "title_kana": "ちぇんそーまん",
+        "title_en": 'Chainsaw Man',
+        "synopsis_en": 'A poor young man merges with his pet devil to become part-chainsaw, part-human, and is recruited into a government agency that hunts devils.',
+        "genre_en": 'Action, Dark Fantasy',
         "synopsis": "借金返済のため悪魔祓いをしていた少年が、相棒の悪魔と契約し"
                     "チェンソーの悪魔として蘇り、危険な任務に挑んでいくダークアクション。",
         "episode_count": 12,
@@ -263,6 +269,9 @@ ANIME = [
         "slug": "oshi-no-ko",
         "title": "【推しの子】",
         "title_kana": "おしのこ",
+        "title_en": '[Oshi No Ko]',
+        "synopsis_en": 'A doctor and his patient are reincarnated as the twin children of the pop idol they idolized, and grow up navigating the glamorous and ruthless entertainment industry.',
+        "genre_en": 'Drama, Entertainment',
         "synopsis": "人気アイドルの子として転生した青年が、芸能界の華やかさと"
                     "その裏側の両方を目の当たりにしながら生きていく群像劇。",
         "episode_count": 11,
@@ -283,6 +292,9 @@ ANIME = [
         "slug": "dungeon-meshi",
         "title": "ダンジョン飯",
         "title_kana": "だんじょんめし",
+        "title_en": 'Delicious in Dungeon',
+        "synopsis_en": "After a party loses a member to a dragon deep in a dungeon, the remaining adventurers decide to cook and eat the dungeon's monsters to survive their rescue mission.",
+        "genre_en": 'Fantasy, Gourmet',
         "synopsis": "ドラゴンに妹を食べられてしまったパーティーが、ダンジョンに生息する"
                     "魔物を食料にしながら妹の救出を目指すユニークなファンタジー。",
         "episode_count": 24,
@@ -303,6 +315,9 @@ ANIME = [
         "slug": "tensei-slime",
         "title": "転生したらスライムだった件",
         "title_kana": "てんせいしたらすらいむだったけん",
+        "title_en": 'That Time I Got Reincarnated as a Slime',
+        "synopsis_en": 'A man killed in modern-day Japan wakes up reincarnated as a slime in a fantasy world, gradually gaining unique powers and building a nation of monsters.',
+        "genre_en": 'Fantasy, Isekai',
         "synopsis": "通り魔に刺され命を落としたサラリーマンが、異世界でスライムに転生し、"
                     "新たな仲間たちと国づくりに奮闘するファンタジー。",
         "episode_count": 24,
@@ -322,6 +337,9 @@ ANIME = [
         "slug": "tokyo-revengers",
         "title": "東京リベンジャーズ",
         "title_kana": "とうきょうりべんじゃーず",
+        "title_en": 'Tokyo Revengers',
+        "synopsis_en": "An unremarkable young man travels back in time to his middle school days to save his ex-girlfriend from a tragic fate by confronting a delinquent gang's turf war.",
+        "genre_en": 'Drama, Action',
         "synopsis": "冴えない青年が中学時代にタイムリープし、恋人を悲劇の運命から救うため"
                     "不良グループの抗争に立ち向かっていくヒューマンドラマ。",
         "episode_count": 24,
@@ -341,6 +359,9 @@ ANIME = [
         "slug": "kaiju-no-8",
         "title": "怪獣8号",
         "title_kana": "かいじゅうはちごう",
+        "title_en": 'Kaiju No. 8',
+        "synopsis_en": 'A man who cleans up after kaiju battles suddenly gains the power to transform into a kaiju himself, and must hide his identity while joining the force meant to destroy monsters like him.',
+        "genre_en": 'Action, Sci-Fi',
         "synopsis": "怪獣清掃業の青年が偶然怪獣の力を得てしまい、正体を隠しながら"
                     "怪獣を倒す防衛隊員として戦うことになる特撮風アクション。",
         "episode_count": 12,
@@ -360,6 +381,9 @@ ANIME = [
         "slug": "kusuriya-no-hitorigoto",
         "title": "薬屋のひとりごと",
         "title_kana": "くすりやのひとりごと",
+        "title_en": 'The Apothecary Diaries',
+        "synopsis_en": 'A skilled young apothecary sold into servitude at the imperial palace uses her knowledge of medicine to solve mysteries and poisonings within the inner court.',
+        "genre_en": 'Mystery, Historical Fantasy',
         "synopsis": "後宮に下働きとして売られた薬師の少女が、持ち前の知識で"
                     "宮廷内の謎や事件を解き明かしていく中華風ミステリー。",
         "episode_count": 24,
@@ -379,6 +403,9 @@ ANIME = [
         "slug": "dragon-ball",
         "title": "ドラゴンボール",
         "title_kana": "どらごんぼーる",
+        "title_en": 'Dragon Ball',
+        "synopsis_en": 'A young boy with a monkey tail and superhuman strength sets out on a journey to collect seven magical Dragon Balls, encountering martial artists and villains along the way.',
+        "genre_en": 'Action, Adventure',
         "synopsis": "願いを叶える伝説の球を巡り、超人的な戦闘力を持つ少年が"
                     "仲間や強敵と出会いながら成長していく格闘冒険アニメ。",
         "episode_count": 153,
@@ -391,6 +418,246 @@ ANIME = [
             {"service": "U-NEXT", "plan_type": "subscription", "watch_url": "https://video.unext.jp/"},
             {"service": "DMM TV", "plan_type": "subscription", "watch_url": "https://tv.dmm.com/vod/"},
             {"service": "Hulu", "plan_type": "subscription", "watch_url": "https://www.hulu.jp/"},
+        ],
+    },
+    {
+        "slug": "hagane-no-renkinjutsushi",
+        "title": "鋼の錬金術師 FULLMETAL ALCHEMIST",
+        "title_kana": "はがねのれんきんじゅつし",
+        "title_en": 'Fullmetal Alchemist',
+        "synopsis_en": "Two brothers who lost their bodies in a forbidden alchemy ritual search for the legendary Philosopher's Stone to restore what they lost.",
+        "genre_en": 'Action, Sci-Fi',
+        "synopsis": "禁忌の人体錬成に手を出し、体の一部を失った兄弟が、"
+                    "失ったものを取り戻すため賢者の石を探す旅に出るダークファンタジー。",
+        "episode_count": 64,
+        "release_year": 2009,
+        "genre": "アクション,ファンタジー",
+        "is_airing": 0,
+        "availability": [
+            {"service": "Abema", "plan_type": "subscription", "watch_url": "https://abema.tv/"},
+            {"service": "DMM TV", "plan_type": "subscription", "watch_url": "https://tv.dmm.com/vod/"},
+            {"service": "dアニメストア", "plan_type": "subscription", "watch_url": "https://anime.dmkt-sp.jp/"},
+            {"service": "U-NEXT", "plan_type": "subscription", "watch_url": "https://video.unext.jp/"},
+            {"service": "Netflix", "plan_type": "subscription", "watch_url": "https://www.netflix.com/jp/"},
+            {"service": "Hulu", "plan_type": "subscription", "watch_url": "https://www.hulu.jp/"},
+        ],
+    },
+    {
+        "slug": "code-geass",
+        "title": "コードギアス 反逆のルルーシュ",
+        "title_kana": "こーどぎあすはんぎゃくのるるーしゅ",
+        "title_en": 'Code Geass: Lelouch of the Rebellion',
+        "synopsis_en": 'An exiled prince gains a mysterious power of absolute command and uses it to lead a rebellion against the empire that took everything from him.',
+        "genre_en": 'Sci-Fi, Mecha',
+        "synopsis": "巨大帝国ブリタニアに占領された日本を舞台に、"
+                    "特殊な力「ギアス」を手に入れた少年が仮面の指導者として反逆を起こしていくSFロボットアニメ。",
+        "episode_count": 25,
+        "release_year": 2006,
+        "genre": "SF,ロボット",
+        "is_airing": 0,
+        "availability": [
+            {"service": "Netflix", "plan_type": "subscription", "watch_url": "https://www.netflix.com/jp/"},
+            {"service": "DMM TV", "plan_type": "subscription", "watch_url": "https://tv.dmm.com/vod/"},
+            {"service": "dアニメストア", "plan_type": "subscription", "watch_url": "https://anime.dmkt-sp.jp/"},
+            {"service": "U-NEXT", "plan_type": "subscription", "watch_url": "https://video.unext.jp/"},
+            {"service": "Hulu", "plan_type": "subscription", "watch_url": "https://www.hulu.jp/"},
+            {"service": "Disney+", "plan_type": "subscription", "watch_url": "https://www.disneyplus.com/ja-jp"},
+        ],
+    },
+    {
+        "slug": "sword-art-online",
+        "title": "ソードアート・オンライン",
+        "title_kana": "そーどあーとおんらいん",
+        "title_en": 'Sword Art Online',
+        "synopsis_en": 'Thousands of players are trapped inside a virtual reality MMORPG where dying in the game means dying in real life, forcing them to fight their way to the final boss to escape.',
+        "genre_en": 'Sci-Fi, Fantasy',
+        "synopsis": "次世代VRMMORPGに閉じ込められたプレイヤーたちが、"
+                    "ゲーム内の死が現実の死に直結する状況の中、生還を目指して戦うSFアドベンチャー。",
+        "episode_count": 25,
+        "release_year": 2012,
+        "genre": "SF,ファンタジー",
+        "is_airing": 0,
+        "availability": [
+            {"service": "U-NEXT", "plan_type": "subscription", "watch_url": "https://video.unext.jp/"},
+            {"service": "dアニメストア", "plan_type": "subscription", "watch_url": "https://anime.dmkt-sp.jp/"},
+            {"service": "DMM TV", "plan_type": "subscription", "watch_url": "https://tv.dmm.com/vod/"},
+            {"service": "Abema", "plan_type": "subscription", "watch_url": "https://abema.tv/"},
+            {"service": "Hulu", "plan_type": "subscription", "watch_url": "https://www.hulu.jp/"},
+            {"service": "Netflix", "plan_type": "subscription", "watch_url": "https://www.netflix.com/jp/"},
+            {"service": "Disney+", "plan_type": "subscription", "watch_url": "https://www.disneyplus.com/ja-jp"},
+        ],
+    },
+    {
+        "slug": "vinland-saga",
+        "title": "ヴィンランド・サガ",
+        "title_kana": "う゛ぃんらんどさが",
+        "title_en": 'Vinland Saga',
+        "synopsis_en": 'After his father is killed by mercenaries, a young boy joins the very band responsible for the murder, waiting for his chance at revenge amid the chaos of war.',
+        "genre_en": 'Action, Historical Drama',
+        "synopsis": "父を殺された少年トルフィンは、仇である傭兵団に加わり復讐の機会をうかがう。"
+                    "戦いに明け暮れる日々の中で、彼が本当に求めるべきものは何かが問われていく歴史群像劇。",
+        "episode_count": 48,
+        "release_year": 2019,
+        "genre": "アクション,歴史,ドラマ",
+        "is_airing": 0,
+        "availability": [
+            {"service": "dアニメストア", "plan_type": "subscription", "watch_url": "https://anime.dmkt-sp.jp/"},
+            {"service": "DMM TV", "plan_type": "subscription", "watch_url": "https://tv.dmm.com/vod/"},
+            {"service": "U-NEXT", "plan_type": "subscription", "watch_url": "https://video.unext.jp/"},
+            {"service": "Hulu", "plan_type": "subscription", "watch_url": "https://www.hulu.jp/"},
+            {"service": "Netflix", "plan_type": "subscription", "watch_url": "https://www.netflix.com/jp/"},
+        ],
+    },
+    {
+        "slug": "re-zero",
+        "title": "Re:ゼロから始める異世界生活",
+        "title_kana": "りぜろからはじめるいせかいせいかつ",
+        "title_en": 'Re:ZERO -Starting Life in Another World-',
+        "synopsis_en": 'Summoned to another world, high schooler Subaru discovers he can rewind time by dying, and uses this power to protect the people he comes to care about through repeated tragedy.',
+        "genre_en": 'Fantasy, Isekai',
+        "synopsis": "異世界に召喚された高校生ナツキ・スバルは、死ぬと時間が巻き戻る「死に戻り」の力を頼りに、"
+                    "大切な仲間たちを守るため過酷な運命に立ち向かっていく異世界ファンタジー。",
+        "episode_count": 19,
+        "release_year": 2016,
+        "genre": "ファンタジー,異世界",
+        "is_airing": 1,
+        "availability": [
+            {"service": "Abema", "plan_type": "free", "watch_url": "https://abema.tv/"},
+            {"service": "dアニメストア", "plan_type": "subscription", "watch_url": "https://anime.dmkt-sp.jp/"},
+            {"service": "DMM TV", "plan_type": "subscription", "watch_url": "https://tv.dmm.com/vod/"},
+            {"service": "U-NEXT", "plan_type": "subscription", "watch_url": "https://video.unext.jp/"},
+            {"service": "Hulu", "plan_type": "subscription", "watch_url": "https://www.hulu.jp/"},
+            {"service": "Netflix", "plan_type": "subscription", "watch_url": "https://www.netflix.com/jp/"},
+            {"service": "Disney+", "plan_type": "subscription", "watch_url": "https://www.disneyplus.com/ja-jp"},
+        ],
+    },
+    {
+        "slug": "mushoku-tensei",
+        "title": "無職転生 ～異世界行ったら本気だす～",
+        "title_kana": "むしょくてんせいいせかいいったらほんきだす",
+        "title_en": 'Mushoku Tensei: Jobless Reincarnation',
+        "synopsis_en": 'A 34-year-old shut-in dies and is reborn as a baby in a fantasy world, determined to live this second life without regrets by mastering magic and swordsmanship.',
+        "genre_en": 'Fantasy, Isekai',
+        "synopsis": "34歳無職のまま人生を終えた男が、赤ん坊として異世界に転生。"
+                    "今度こそ後悔しない人生を送ろうと、魔法の修行に励みながら新たな世界で本気の人生をやり直す。",
+        "episode_count": 11,
+        "release_year": 2021,
+        "genre": "ファンタジー,異世界",
+        "is_airing": 1,
+        "availability": [
+            {"service": "Abema", "plan_type": "free", "watch_url": "https://abema.tv/"},
+            {"service": "dアニメストア", "plan_type": "subscription", "watch_url": "https://anime.dmkt-sp.jp/"},
+            {"service": "DMM TV", "plan_type": "subscription", "watch_url": "https://tv.dmm.com/vod/"},
+            {"service": "U-NEXT", "plan_type": "subscription", "watch_url": "https://video.unext.jp/"},
+            {"service": "Hulu", "plan_type": "subscription", "watch_url": "https://www.hulu.jp/"},
+            {"service": "Netflix", "plan_type": "subscription", "watch_url": "https://www.netflix.com/jp/"},
+            {"service": "Disney+", "plan_type": "subscription", "watch_url": "https://www.disneyplus.com/ja-jp"},
+        ],
+    },
+    {
+        "slug": "blue-lock",
+        "title": "ブルーロック",
+        "title_kana": "ぶるーろっく",
+        "title_en": 'Blue Lock',
+        "synopsis_en": "300 of Japan's most talented young strikers are gathered into an unconventional training program designed to produce a single egotistical striker capable of leading the national team to a World Cup win.",
+        "genre_en": 'Sports, Soccer',
+        "synopsis": "日本サッカーをW杯優勝に導く「エゴイスト」ストライカーを育成するため、"
+                    "300人の高校生FWたちが生き残りをかけて競い合う異色のサッカー育成プロジェクトを描く。",
+        "episode_count": 38,
+        "release_year": 2022,
+        "genre": "スポーツ,サッカー",
+        "is_airing": 0,
+        "availability": [
+            {"service": "Abema", "plan_type": "subscription", "watch_url": "https://abema.tv/"},
+            {"service": "dアニメストア", "plan_type": "subscription", "watch_url": "https://anime.dmkt-sp.jp/"},
+            {"service": "DMM TV", "plan_type": "subscription", "watch_url": "https://tv.dmm.com/vod/"},
+            {"service": "U-NEXT", "plan_type": "subscription", "watch_url": "https://video.unext.jp/"},
+            {"service": "Hulu", "plan_type": "subscription", "watch_url": "https://www.hulu.jp/"},
+            {"service": "Netflix", "plan_type": "subscription", "watch_url": "https://www.netflix.com/jp/"},
+            {"service": "Disney+", "plan_type": "subscription", "watch_url": "https://www.disneyplus.com/ja-jp"},
+        ],
+    },
+    {
+        "slug": "bocchi-the-rock",
+        "title": "ぼっち・ざ・ろっく！",
+        "title_kana": "ぼっちざろっく",
+        "title_en": 'Bocchi the Rock!',
+        "synopsis_en": "A painfully shy girl who only knows how to express herself through guitar is unexpectedly recruited into a girls' rock band, forcing her to face her fear of people.",
+        "genre_en": 'Music, Comedy',
+        "synopsis": "ギターを愛する孤独な少女・後藤ひとりが、ひょんなことからガールズバンド「結束バンド」に加入し、"
+                    "人前での演奏に不慣れながらも仲間との絆を通じて成長していく青春音楽コメディ。",
+        "episode_count": 12,
+        "release_year": 2022,
+        "genre": "音楽,青春,コメディ",
+        "is_airing": 0,
+        "availability": [
+            {"service": "dアニメストア", "plan_type": "subscription", "watch_url": "https://anime.dmkt-sp.jp/"},
+            {"service": "DMM TV", "plan_type": "subscription", "watch_url": "https://tv.dmm.com/vod/"},
+            {"service": "U-NEXT", "plan_type": "subscription", "watch_url": "https://video.unext.jp/"},
+            {"service": "Hulu", "plan_type": "subscription", "watch_url": "https://www.hulu.jp/"},
+            {"service": "Netflix", "plan_type": "subscription", "watch_url": "https://www.netflix.com/jp/"},
+        ],
+    },
+    {
+        "slug": "ousama-ranking",
+        "title": "王様ランキング",
+        "title_kana": "おうさまらんきんぐ",
+        "title_en": 'Ranking of Kings',
+        "synopsis_en": 'Bojji, a deaf prince unable to speak or wield a sword, is dismissed by everyone as unfit to rule — until a mysterious shadow boy befriends him and helps him find his own strength.',
+        "genre_en": 'Fantasy, Adventure',
+        "synopsis": "耳が聞こえず言葉も話せない王子ボッジは、周囲から王の器ではないと見下されていた。"
+                    "影の一族の少年カゲとの出会いをきっかけに、自分の力で道を切り開いていく感動の王道ファンタジー。",
+        "episode_count": 23,
+        "release_year": 2021,
+        "genre": "ファンタジー,冒険,ドラマ",
+        "is_airing": 0,
+        "availability": [
+            {"service": "dアニメストア", "plan_type": "subscription", "watch_url": "https://anime.dmkt-sp.jp/"},
+            {"service": "DMM TV", "plan_type": "subscription", "watch_url": "https://tv.dmm.com/vod/"},
+            {"service": "U-NEXT", "plan_type": "subscription", "watch_url": "https://video.unext.jp/"},
+            {"service": "Netflix", "plan_type": "subscription", "watch_url": "https://www.netflix.com/jp/"},
+        ],
+    },
+    {
+        "slug": "jigokuraku",
+        "title": "地獄楽",
+        "title_kana": "じごくらく",
+        "title_en": "Hell's Paradise",
+        "synopsis_en": 'A condemned ninja is offered a pardon if he can retrieve the elixir of immortality from a mysterious island, where death row convicts compete against monstrous inhabitants to survive.',
+        "genre_en": 'Action, Dark Fantasy',
+        "synopsis": "死罪を宣告された最強の忍・画眉丸は、不老不死の仙薬を持ち帰れば無罪放免になると告げられる。"
+                    "極楽浄土と噂される異形の島を舞台に、死罪人たちによる仙薬争奪戦が幕を開ける忍法浪漫活劇。",
+        "episode_count": 26,
+        "release_year": 2023,
+        "genre": "アクション,ダークファンタジー",
+        "is_airing": 0,
+        "availability": [
+            {"service": "dアニメストア", "plan_type": "subscription", "watch_url": "https://anime.dmkt-sp.jp/"},
+            {"service": "U-NEXT", "plan_type": "subscription", "watch_url": "https://video.unext.jp/"},
+            {"service": "Netflix", "plan_type": "subscription", "watch_url": "https://www.netflix.com/jp/"},
+        ],
+    },
+    {
+        "slug": "sono-bisque-doll",
+        "title": "その着せ替え人形は恋をする",
+        "title_kana": "そのきせかえにんぎょうはこいをする",
+        "title_en": 'My Dress-Up Darling',
+        "synopsis_en": 'A high schooler who dreams of making traditional dolls ends up helping his popular, cosplay-obsessed classmate sew costumes, sparking an unlikely friendship between two very different worlds.',
+        "genre_en": 'Romance, School',
+        "synopsis": "雛人形の頭師を目指す高校生・五条新菜と、クラスの人気者でコスプレに憧れる喜多川海夢。"
+                    "秘密を共有したことをきっかけに、決して交わるはずのなかった2人の世界が動き出す青春ラブコメ。",
+        "episode_count": 24,
+        "release_year": 2022,
+        "genre": "恋愛,青春,コメディ",
+        "is_airing": 0,
+        "availability": [
+            {"service": "Abema", "plan_type": "subscription", "watch_url": "https://abema.tv/"},
+            {"service": "dアニメストア", "plan_type": "subscription", "watch_url": "https://anime.dmkt-sp.jp/"},
+            {"service": "DMM TV", "plan_type": "subscription", "watch_url": "https://tv.dmm.com/vod/"},
+            {"service": "U-NEXT", "plan_type": "subscription", "watch_url": "https://video.unext.jp/"},
+            {"service": "Hulu", "plan_type": "subscription", "watch_url": "https://www.hulu.jp/"},
+            {"service": "Netflix", "plan_type": "subscription", "watch_url": "https://www.netflix.com/jp/"},
+            {"service": "Disney+", "plan_type": "subscription", "watch_url": "https://www.disneyplus.com/ja-jp"},
         ],
     },
 ]
@@ -409,12 +676,20 @@ def seed():
     for a in ANIME:
         cur.execute(
             """INSERT OR IGNORE INTO anime
-               (slug, title, title_kana, synopsis, episode_count, release_year, genre, is_airing)
-               VALUES (?, ?, ?, ?, ?, ?, ?, ?)""",
+               (slug, title, title_kana, synopsis, title_en, synopsis_en, genre_en,
+                episode_count, release_year, genre, is_airing)
+               VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)""",
             (
                 a["slug"], a["title"], a["title_kana"], a["synopsis"],
+                a.get("title_en"), a.get("synopsis_en"), a.get("genre_en"),
                 a["episode_count"], a["release_year"], a["genre"], a["is_airing"],
             ),
+        )
+        # 既存行にも英語フィールドを常に同期させる(再デプロイ時の翻訳更新に対応)
+        cur.execute(
+            """UPDATE anime SET title_en = ?, synopsis_en = ?, genre_en = ?
+               WHERE slug = ?""",
+            (a.get("title_en"), a.get("synopsis_en"), a.get("genre_en"), a["slug"]),
         )
         cur.execute("SELECT id FROM anime WHERE slug = ?", (a["slug"],))
         anime_id = cur.fetchone()["id"]

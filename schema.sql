@@ -5,6 +5,9 @@ CREATE TABLE IF NOT EXISTS anime (
     title TEXT NOT NULL,              -- 表示タイトル (例: 鬼滅の刃)
     title_kana TEXT,                  -- 検索用ふりがな
     synopsis TEXT,                    -- あらすじ
+    title_en TEXT,                    -- 英語タイトル (英語版ページ用)
+    synopsis_en TEXT,                 -- 英語あらすじ (英語版ページ用)
+    genre_en TEXT,                    -- 英語ジャンル、カンマ区切り (英語版ページ用)
     episode_count INTEGER,            -- 話数
     release_year INTEGER,             -- 放送年
     genre TEXT,                       -- ジャンル (カンマ区切り)

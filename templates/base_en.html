@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{% block title %}Where to Watch Anime | DOKOMIRU{% endblock %}</title>
+<meta name="description" content="{% block description %}Find out where to legally stream any anime — Crunchyroll, Netflix, Disney+, Hulu, and more, all in one search.{% endblock %}">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+<link rel="alternate" hreflang="ja" href="{{ request.url_root.rstrip('/') }}{{ ja_path|default('/') }}">
+<link rel="alternate" hreflang="en" href="{{ request.url_root.rstrip('/') }}{{ request.path }}">
+</head>
+<body>
+
+<header class="topbar">
+  <a href="/en/" class="logo">DOKOMIRU<span class="logo-dot">.</span></a>
+  <form class="search-form" action="/en/" method="get">
+    <input type="text" name="q" placeholder="Search by title…" value="{{ query|default('') }}">
+    <button type="submit">Search</button>
+  </form>
+  <a class="lang-switch" href="{{ ja_path|default('/') }}">日本語</a>
+</header>
+
+<main>
+  {% block content %}{% endblock %}
+</main>
+
+<footer>
+  <nav class="footer-nav">
+    <a href="/en/privacy">Privacy Policy</a>
+    <span class="footer-sep">・</span>
+    <a href="/en/contact">Contact</a>
+  </nav>
+  <p>© 2026 DOKOMIRU — Streaming availability may change. Please check each service's official site for the latest information.</p>
+</footer>
+
+</body>
+</html>

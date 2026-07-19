@@ -258,6 +258,12 @@ def contact():
     return render_template("contact.html", en_path="/en/contact")
 
 
+@app.route("/ads.txt")
+def ads_txt():
+    content = "google.com, pub-7059621726238022, DIRECT, f08c47fec0942fa0"
+    return Response(content, mimetype="text/plain")
+
+
 @app.route("/sitemap.xml")
 def sitemap():
     conn = get_connection()

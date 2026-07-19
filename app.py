@@ -101,9 +101,15 @@ def anime_detail(slug):
         (anime["id"],),
     ).fetchall()
 
+    seasons = conn.execute(
+        """SELECT label, subtitle, kind, release_year, episode_count
+           FROM season WHERE anime_id = ? ORDER BY display_order""",
+        (anime["id"],),
+    ).fetchall()
+
     conn.close()
     return render_template(
-        "anime_detail.html", anime=anime, availability=availability,
+        "anime_detail.html", anime=anime, availability=availability, seasons=seasons,
         en_path=f"/en/anime/{slug}",
     )
 
@@ -189,9 +195,15 @@ def anime_detail_en(slug):
         (anime["id"],),
     ).fetchall()
 
+    seasons = conn.execute(
+        """SELECT label, subtitle, kind, release_year, episode_count
+           FROM season WHERE anime_id = ? ORDER BY display_order""",
+        (anime["id"],),
+    ).fetchall()
+
     conn.close()
     return render_template(
-        "anime_detail_en.html", anime=anime, availability=availability,
+        "anime_detail_en.html", anime=anime, availability=availability, seasons=seasons,
         ja_path=f"/anime/{slug}",
     )
 

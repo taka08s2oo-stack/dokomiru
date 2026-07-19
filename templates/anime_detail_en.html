@@ -14,6 +14,26 @@
 
   <p class="detail-synopsis">{{ anime['synopsis_en'] }}</p>
 
+  {% if seasons %}
+  <h2 class="section-title">Seasons & Movies</h2>
+  <div class="season-list">
+    {% for s in seasons %}
+    <div class="season-row">
+      <span class="season-kind-badge season-kind-{{ s['kind'] }}">
+        {% if s['kind'] == 'movie' %}Movie{% else %}TV{% endif %}
+      </span>
+      <div class="season-info">
+        <p class="season-label">{{ s['label'] }}{% if s['subtitle'] %} — {{ s['subtitle'] }}{% endif %}</p>
+        <p class="season-meta">
+          {% if s['release_year'] %}{{ s['release_year'] }}{% endif %}
+          {% if s['episode_count'] %} ・ {{ s['episode_count'] }} episodes{% endif %}
+        </p>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+  {% endif %}
+
   <h2 class="section-title">Where to Watch</h2>
 
   {% if availability %}

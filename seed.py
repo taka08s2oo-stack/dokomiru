@@ -663,6 +663,139 @@ ANIME = [
 ]
 
 
+
+# シーズン・劇場版データ (作品slug -> [{"label", "subtitle", "kind", "release_year", "episode_count"}])
+SEASONS = {
+    "kimetsu-no-yaiba": [
+        {"label": "シーズン1", "subtitle": "竈門炭治郎 立志編", "kind": "tv", "release_year": 2019, "episode_count": 26},
+        {"label": "劇場版", "subtitle": "無限列車編", "kind": "movie", "release_year": 2020, "episode_count": None},
+        {"label": "シーズン2", "subtitle": "遊郭編", "kind": "tv", "release_year": 2021, "episode_count": 11},
+        {"label": "シーズン3", "subtitle": "刀鍛冶の里編", "kind": "tv", "release_year": 2023, "episode_count": 11},
+        {"label": "シーズン4", "subtitle": "柱稽古編", "kind": "tv", "release_year": 2024, "episode_count": 8},
+        {"label": "劇場版", "subtitle": "無限城編 第一章 猗窩座再来", "kind": "movie", "release_year": 2025, "episode_count": None},
+    ],
+    "jujutsu-kaisen": [
+        {"label": "シーズン1", "subtitle": None, "kind": "tv", "release_year": 2020, "episode_count": 24},
+        {"label": "劇場版", "subtitle": "呪術廻戦 0", "kind": "movie", "release_year": 2021, "episode_count": None},
+        {"label": "シーズン2", "subtitle": "渋谷事変", "kind": "tv", "release_year": 2023, "episode_count": 23},
+        {"label": "シーズン3", "subtitle": "死滅回游", "kind": "tv", "release_year": 2026, "episode_count": None},
+    ],
+    "spy-family": [
+        {"label": "シーズン1", "subtitle": None, "kind": "tv", "release_year": 2022, "episode_count": 25},
+        {"label": "シーズン2", "subtitle": None, "kind": "tv", "release_year": 2023, "episode_count": 12},
+        {"label": "劇場版", "subtitle": "CODE: White", "kind": "movie", "release_year": 2023, "episode_count": None},
+    ],
+    "shingeki-no-kyojin": [
+        {"label": "シーズン1", "subtitle": None, "kind": "tv", "release_year": 2013, "episode_count": 25},
+        {"label": "シーズン2", "subtitle": None, "kind": "tv", "release_year": 2017, "episode_count": 12},
+        {"label": "シーズン3", "subtitle": None, "kind": "tv", "release_year": 2018, "episode_count": 22},
+        {"label": "The Final Season", "subtitle": None, "kind": "tv", "release_year": 2020, "episode_count": 28},
+    ],
+    "boku-no-hero-academia": [
+        {"label": "シーズン1", "subtitle": None, "kind": "tv", "release_year": 2016, "episode_count": 13},
+        {"label": "シーズン2", "subtitle": None, "kind": "tv", "release_year": 2017, "episode_count": 25},
+        {"label": "シーズン3", "subtitle": None, "kind": "tv", "release_year": 2018, "episode_count": 25},
+        {"label": "シーズン4", "subtitle": None, "kind": "tv", "release_year": 2019, "episode_count": 25},
+        {"label": "シーズン5", "subtitle": None, "kind": "tv", "release_year": 2021, "episode_count": 25},
+        {"label": "シーズン6", "subtitle": None, "kind": "tv", "release_year": 2022, "episode_count": 21},
+        {"label": "シーズン7", "subtitle": "最終章", "kind": "tv", "release_year": 2023, "episode_count": 21},
+    ],
+    "meitantei-conan": [
+        {"label": "TVシリーズ", "subtitle": "1996年〜放送中", "kind": "tv", "release_year": 1996, "episode_count": None},
+        {"label": "劇場版シリーズ", "subtitle": "毎年春に新作公開", "kind": "movie", "release_year": None, "episode_count": None},
+    ],
+    "haikyuu": [
+        {"label": "シーズン1", "subtitle": None, "kind": "tv", "release_year": 2014, "episode_count": 25},
+        {"label": "シーズン2", "subtitle": None, "kind": "tv", "release_year": 2015, "episode_count": 25},
+        {"label": "シーズン3", "subtitle": None, "kind": "tv", "release_year": 2016, "episode_count": 10},
+        {"label": "シーズン4", "subtitle": "烏野高校 VS 白鳥沢学園高校", "kind": "tv", "release_year": 2020, "episode_count": 25},
+        {"label": "劇場版", "subtitle": "ゴミ捨て場の決戦", "kind": "movie", "release_year": 2024, "episode_count": None},
+    ],
+    "gotoubun-no-hanayome": [
+        {"label": "シーズン1", "subtitle": None, "kind": "tv", "release_year": 2019, "episode_count": 12},
+        {"label": "シーズン2", "subtitle": None, "kind": "tv", "release_year": 2021, "episode_count": 12},
+        {"label": "劇場版", "subtitle": None, "kind": "movie", "release_year": 2022, "episode_count": None},
+    ],
+    "chainsaw-man": [
+        {"label": "シーズン1", "subtitle": None, "kind": "tv", "release_year": 2022, "episode_count": 12},
+        {"label": "劇場版", "subtitle": "レゼ篇", "kind": "movie", "release_year": 2025, "episode_count": None},
+    ],
+    "oshi-no-ko": [
+        {"label": "シーズン1", "subtitle": None, "kind": "tv", "release_year": 2023, "episode_count": 11},
+        {"label": "シーズン2", "subtitle": None, "kind": "tv", "release_year": 2024, "episode_count": 13},
+    ],
+    "tensei-slime": [
+        {"label": "シーズン1", "subtitle": None, "kind": "tv", "release_year": 2018, "episode_count": 24},
+        {"label": "劇場版", "subtitle": "紅蓮の絆編", "kind": "movie", "release_year": 2022, "episode_count": None},
+        {"label": "シーズン2", "subtitle": None, "kind": "tv", "release_year": 2021, "episode_count": 24},
+        {"label": "シーズン3", "subtitle": None, "kind": "tv", "release_year": 2024, "episode_count": 16},
+    ],
+    "tokyo-revengers": [
+        {"label": "シーズン1", "subtitle": None, "kind": "tv", "release_year": 2021, "episode_count": 24},
+        {"label": "シーズン2", "subtitle": "血のハロウィン編", "kind": "tv", "release_year": 2023, "episode_count": 13},
+        {"label": "シーズン3", "subtitle": "天竺編", "kind": "tv", "release_year": 2023, "episode_count": 25},
+    ],
+    "kusuriya-no-hitorigoto": [
+        {"label": "シーズン1", "subtitle": None, "kind": "tv", "release_year": 2023, "episode_count": 24},
+        {"label": "シーズン2", "subtitle": None, "kind": "tv", "release_year": 2024, "episode_count": 24},
+    ],
+    "dragon-ball": [
+        {"label": "ドラゴンボール", "subtitle": None, "kind": "tv", "release_year": 1986, "episode_count": 153},
+        {"label": "ドラゴンボールZ", "subtitle": None, "kind": "tv", "release_year": 1989, "episode_count": 291},
+        {"label": "ドラゴンボール超", "subtitle": None, "kind": "tv", "release_year": 2015, "episode_count": 131},
+        {"label": "劇場版シリーズ", "subtitle": "複数作品あり", "kind": "movie", "release_year": None, "episode_count": None},
+    ],
+    "hagane-no-renkinjutsushi": [
+        {"label": "TVシリーズ(2003年版)", "subtitle": None, "kind": "tv", "release_year": 2003, "episode_count": 51},
+        {"label": "FULLMETAL ALCHEMIST", "subtitle": "BROTHERHOOD", "kind": "tv", "release_year": 2009, "episode_count": 64},
+    ],
+    "code-geass": [
+        {"label": "シーズン1", "subtitle": "反逆のルルーシュ", "kind": "tv", "release_year": 2006, "episode_count": 25},
+        {"label": "シーズン2", "subtitle": "反逆のルルーシュ R2", "kind": "tv", "release_year": 2008, "episode_count": 25},
+        {"label": "劇場版三部作", "subtitle": "興道/叛道/皇道", "kind": "movie", "release_year": 2017, "episode_count": None},
+    ],
+    "sword-art-online": [
+        {"label": "シーズン1", "subtitle": None, "kind": "tv", "release_year": 2012, "episode_count": 25},
+        {"label": "シーズン2", "subtitle": None, "kind": "tv", "release_year": 2014, "episode_count": 24},
+        {"label": "劇場版", "subtitle": "オーディナル・スケール", "kind": "movie", "release_year": 2017, "episode_count": None},
+        {"label": "アリシゼーション編", "subtitle": None, "kind": "tv", "release_year": 2018, "episode_count": 48},
+    ],
+    "vinland-saga": [
+        {"label": "シーズン1", "subtitle": None, "kind": "tv", "release_year": 2019, "episode_count": 24},
+        {"label": "シーズン2", "subtitle": None, "kind": "tv", "release_year": 2023, "episode_count": 24},
+    ],
+    "re-zero": [
+        {"label": "シーズン1", "subtitle": None, "kind": "tv", "release_year": 2016, "episode_count": 25},
+        {"label": "シーズン2", "subtitle": None, "kind": "tv", "release_year": 2020, "episode_count": 25},
+        {"label": "シーズン3", "subtitle": None, "kind": "tv", "release_year": 2024, "episode_count": 16},
+    ],
+    "mushoku-tensei": [
+        {"label": "シーズン1", "subtitle": None, "kind": "tv", "release_year": 2021, "episode_count": 23},
+        {"label": "シーズン2", "subtitle": None, "kind": "tv", "release_year": 2023, "episode_count": 24},
+        {"label": "シーズン3", "subtitle": None, "kind": "tv", "release_year": 2025, "episode_count": None},
+    ],
+    "blue-lock": [
+        {"label": "シーズン1", "subtitle": None, "kind": "tv", "release_year": 2022, "episode_count": 24},
+        {"label": "シーズン2", "subtitle": "VS U-20 JAPAN", "kind": "tv", "release_year": 2024, "episode_count": 14},
+    ],
+    "ousama-ranking": [
+        {"label": "シーズン1", "subtitle": None, "kind": "tv", "release_year": 2021, "episode_count": 23},
+        {"label": "シーズン2", "subtitle": "勇気の宝箱", "kind": "tv", "release_year": 2024, "episode_count": None},
+    ],
+    "jigokuraku": [
+        {"label": "シーズン1", "subtitle": None, "kind": "tv", "release_year": 2023, "episode_count": 13},
+        {"label": "シーズン2", "subtitle": None, "kind": "tv", "release_year": 2026, "episode_count": 13},
+    ],
+    "sono-bisque-doll": [
+        {"label": "シーズン1", "subtitle": None, "kind": "tv", "release_year": 2022, "episode_count": 12},
+        {"label": "シーズン2", "subtitle": None, "kind": "tv", "release_year": 2025, "episode_count": 12},
+    ],
+    "one-piece": [
+        {"label": "TVシリーズ", "subtitle": "1999年〜放送中", "kind": "tv", "release_year": 1999, "episode_count": None},
+        {"label": "劇場版シリーズ", "subtitle": "複数作品あり", "kind": "movie", "release_year": None, "episode_count": None},
+    ],
+}
+
 def seed():
     conn = get_connection()
     cur = conn.cursor()
@@ -704,6 +837,24 @@ def seed():
                    (anime_id, service_id, plan_type, watch_url)
                    VALUES (?, ?, ?, ?)""",
                 (anime_id, service_row["id"], av["plan_type"], av["watch_url"]),
+            )
+
+
+    # シーズン・劇場版データの投入
+    cur.execute("DELETE FROM season")  # 再デプロイのたびに最新のシーズン一覧に入れ替える
+    for slug, season_list in SEASONS.items():
+        cur.execute("SELECT id FROM anime WHERE slug = ?", (slug,))
+        row = cur.fetchone()
+        if row is None:
+            continue
+        anime_id = row["id"]
+        for i, s in enumerate(season_list):
+            cur.execute(
+                """INSERT INTO season
+                   (anime_id, label, subtitle, kind, release_year, episode_count, display_order)
+                   VALUES (?, ?, ?, ?, ?, ?, ?)""",
+                (anime_id, s["label"], s.get("subtitle"), s["kind"],
+                 s.get("release_year"), s.get("episode_count"), i),
             )
 
     conn.commit()

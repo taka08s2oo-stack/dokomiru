@@ -13,6 +13,26 @@
 
   <p class="detail-synopsis">{{ anime['synopsis'] }}</p>
 
+  {% if seasons %}
+  <h2 class="section-title">シーズン・劇場版一覧</h2>
+  <div class="season-list">
+    {% for s in seasons %}
+    <div class="season-row">
+      <span class="season-kind-badge season-kind-{{ s['kind'] }}">
+        {% if s['kind'] == 'movie' %}劇場版{% else %}TV{% endif %}
+      </span>
+      <div class="season-info">
+        <p class="season-label">{{ s['label'] }}{% if s['subtitle'] %} — {{ s['subtitle'] }}{% endif %}</p>
+        <p class="season-meta">
+          {% if s['release_year'] %}{{ s['release_year'] }}年{% endif %}
+          {% if s['episode_count'] %} ・ 全{{ s['episode_count'] }}話{% endif %}
+        </p>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+  {% endif %}
+
   <h2 class="section-title">配信サービス一覧</h2>
 
   {% if availability %}

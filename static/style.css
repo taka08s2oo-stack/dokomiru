@@ -269,6 +269,46 @@ main {
   gap: 0.7rem;
 }
 
+.season-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  margin-bottom: 2rem;
+}
+
+.season-row {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background: var(--bg-card);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 0.8rem 1.2rem;
+}
+
+.season-kind-badge {
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 0.25rem 0.6rem;
+  border-radius: 999px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.season-kind-tv { background: rgba(52, 228, 234, 0.15); color: var(--cyan); }
+.season-kind-movie { background: rgba(255, 62, 127, 0.15); color: var(--magenta); }
+
+.season-label {
+  font-weight: 600;
+  margin: 0 0 0.15rem;
+}
+
+.season-meta {
+  color: var(--ink-dim);
+  font-size: 0.8rem;
+  margin: 0;
+}
+
 .service-row {
   display: flex;
   align-items: center;

@@ -206,6 +206,36 @@ def contact_en():
     return render_template("contact_en.html", ja_path="/contact")
 
 
+@app.route("/about")
+def about():
+    return render_template("about.html", en_path="/en/about")
+
+
+@app.route("/en/about")
+def about_en():
+    return render_template("about_en.html", ja_path="/about")
+
+
+@app.route("/guides")
+def guides():
+    return render_template("guides.html", en_path="/en/")
+
+
+@app.route("/guides/service-comparison")
+def guide_service_comparison():
+    return render_template("guide_service_comparison.html", en_path="/en/")
+
+
+@app.route("/guides/free-anime")
+def guide_free_anime():
+    return render_template("guide_free_anime.html", en_path="/en/")
+
+
+@app.route("/guides/beginner-guide")
+def guide_beginner():
+    return render_template("guide_beginner.html", en_path="/en/")
+
+
 @app.route("/privacy")
 def privacy():
     return render_template("privacy.html", en_path="/en/privacy")
@@ -226,9 +256,15 @@ def sitemap():
     xml_parts = ['<?xml version="1.0" encoding="UTF-8"?>',
                  '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">']
     xml_parts.append(f"<url><loc>{base_url}/</loc></url>")
+    xml_parts.append(f"<url><loc>{base_url}/about</loc></url>")
+    xml_parts.append(f"<url><loc>{base_url}/guides</loc></url>")
+    xml_parts.append(f"<url><loc>{base_url}/guides/service-comparison</loc></url>")
+    xml_parts.append(f"<url><loc>{base_url}/guides/free-anime</loc></url>")
+    xml_parts.append(f"<url><loc>{base_url}/guides/beginner-guide</loc></url>")
     xml_parts.append(f"<url><loc>{base_url}/privacy</loc></url>")
     xml_parts.append(f"<url><loc>{base_url}/contact</loc></url>")
     xml_parts.append(f"<url><loc>{base_url}/en/</loc></url>")
+    xml_parts.append(f"<url><loc>{base_url}/en/about</loc></url>")
     xml_parts.append(f"<url><loc>{base_url}/en/privacy</loc></url>")
     xml_parts.append(f"<url><loc>{base_url}/en/contact</loc></url>")
     for row in rows:

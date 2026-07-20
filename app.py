@@ -80,6 +80,44 @@ def index():
     )
 
 
+def get_genre_counts(conn):
+    """ジャンル一覧ページ用に、各ジャンルの作品数もあわせて取得する。"""
+    rows = conn.execute("SELECT genre FROM anime").fetchall()
+    counts = {}
+    for row in rows:
+        for g in row["genre"].split(","):
+            g = g.strip()
+            if g:
+                counts[g] = counts.get(g, 0) + 1
+    return sorted(counts.items(), key=lambda x: x[0])
+
+
+@app.route("/genres")
+def genres():
+    conn = get_connection()
+    genre_counts = get_genre_counts(conn)
+    conn.close()
+    return render_template("genres.html", genre_counts=genre_counts, en_path="/en/genres")
+
+
+@app.route("/genre/<genre_name>")
+def genre_detail(genre_name):
+    conn = get_connection()
+    rows = conn.execute(
+        """SELECT DISTINCT anime.* FROM anime
+           WHERE (',' || anime.genre || ',') LIKE ?
+           ORDER BY anime.release_year DESC""",
+        (f"%,{genre_name},%",),
+    ).fetchall()
+    conn.close()
+    if not rows:
+        abort(404)
+    return render_template(
+        "genre_detail.html", genre_name=genre_name, anime_list=rows,
+        en_path="/en/genres",
+    )
+
+
 @app.route("/anime/<slug>")
 def anime_detail(slug):
     conn = get_connection()
@@ -171,6 +209,43 @@ def index_en():
         all_genres=all_genres,
         all_services=all_services,
         ja_path="/",
+    )
+
+
+def get_genre_counts_en(conn):
+    rows = conn.execute("SELECT genre_en FROM anime WHERE genre_en IS NOT NULL").fetchall()
+    counts = {}
+    for row in rows:
+        for g in row["genre_en"].split(","):
+            g = g.strip()
+            if g:
+                counts[g] = counts.get(g, 0) + 1
+    return sorted(counts.items(), key=lambda x: x[0])
+
+
+@app.route("/en/genres")
+def genres_en():
+    conn = get_connection()
+    genre_counts = get_genre_counts_en(conn)
+    conn.close()
+    return render_template("genres_en.html", genre_counts=genre_counts, ja_path="/genres")
+
+
+@app.route("/en/genre/<genre_name>")
+def genre_detail_en(genre_name):
+    conn = get_connection()
+    rows = conn.execute(
+        """SELECT DISTINCT anime.* FROM anime
+           WHERE anime.title_en IS NOT NULL AND (',' || anime.genre_en || ',') LIKE ?
+           ORDER BY anime.release_year DESC""",
+        (f"%,{genre_name},%",),
+    ).fetchall()
+    conn.close()
+    if not rows:
+        abort(404)
+    return render_template(
+        "genre_detail_en.html", genre_name=genre_name, anime_list=rows,
+        ja_path="/genres",
     )
 
 
@@ -268,6 +343,8 @@ def ads_txt():
 def sitemap():
     conn = get_connection()
     rows = conn.execute("SELECT slug, updated_at FROM anime").fetchall()
+    genre_counts = get_genre_counts(conn)
+    genre_counts_en = get_genre_counts_en(conn)
     conn.close()
 
     base_url = request.url_root.rstrip("/")
@@ -281,10 +358,16 @@ def sitemap():
     xml_parts.append(f"<url><loc>{base_url}/guides/beginner-guide</loc></url>")
     xml_parts.append(f"<url><loc>{base_url}/privacy</loc></url>")
     xml_parts.append(f"<url><loc>{base_url}/contact</loc></url>")
+    xml_parts.append(f"<url><loc>{base_url}/genres</loc></url>")
     xml_parts.append(f"<url><loc>{base_url}/en/</loc></url>")
     xml_parts.append(f"<url><loc>{base_url}/en/about</loc></url>")
     xml_parts.append(f"<url><loc>{base_url}/en/privacy</loc></url>")
     xml_parts.append(f"<url><loc>{base_url}/en/contact</loc></url>")
+    xml_parts.append(f"<url><loc>{base_url}/en/genres</loc></url>")
+    for g, _ in genre_counts:
+        xml_parts.append(f"<url><loc>{base_url}/genre/{g}</loc></url>")
+    for g, _ in genre_counts_en:
+        xml_parts.append(f"<url><loc>{base_url}/en/genre/{g}</loc></url>")
     for row in rows:
         xml_parts.append(
             f"<url><loc>{base_url}/anime/{row['slug']}</loc>"

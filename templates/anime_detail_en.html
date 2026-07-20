@@ -8,7 +8,12 @@
   <div class="detail-head">
     {% if anime['is_airing'] %}<span class="badge-airing">Airing</span>{% endif %}
     <h1>{{ anime['title_en'] }}</h1>
-    <p class="detail-meta">{{ anime['release_year'] }} ・ {{ anime['episode_count'] }} episodes ・ {{ anime['genre_en'] }}</p>
+    <p class="detail-meta">{{ anime['release_year'] }} ・ {{ anime['episode_count'] }} episodes</p>
+    <div class="genre-tags">
+      {% for g in anime['genre_en'].split(',') %}
+      <a class="genre-tag" href="/en/genre/{{ g.strip() }}">{{ g.strip() }}</a>
+      {% endfor %}
+    </div>
     <p class="detail-meta">Japanese title: {{ anime['title'] }}</p>
   </div>
 

@@ -1,0 +1,22 @@
+{% extends "base_en.html" %}
+
+{% block title %}Browse by Genre | DOKOMIRU{% endblock %}
+{% block description %}Browse anime by genre — isekai, romance, action, sports and more — and find out where to watch each one.{% endblock %}
+
+{% block content %}
+<section class="hero">
+  <h1>Browse by Genre</h1>
+  <p class="hero-sub">Tap a genre to see the full list of titles.</p>
+</section>
+
+<section class="list-wrap">
+  <div class="genre-grid">
+    {% for g, count in genre_counts %}
+    <a class="genre-tile" href="/en/genre/{{ g }}">
+      <span class="genre-tile-name">{{ g }}</span>
+      <span class="genre-tile-count">{{ count }} titles</span>
+    </a>
+    {% endfor %}
+  </div>
+</section>
+{% endblock %}

@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block title %}{{ genre_name }}アニメ一覧 | DOKOMIRU{% endblock %}
+{% block description %}{{ genre_name }}ジャンルのアニメ作品一覧です。それぞれの配信サービスもあわせて確認できます。{% endblock %}
+
+{% block content %}
+<section class="hero">
+  <p class="eyebrow"><a href="/genres" class="genre-back-link">← ジャンル一覧</a></p>
+  <h1>{{ genre_name }}<span class="hl">アニメ一覧</span></h1>
+  <p class="hero-sub">{{ anime_list|length }}作品</p>
+</section>
+
+<section class="list-wrap">
+  <div class="anime-grid">
+    {% for anime in anime_list %}
+    <a class="anime-card" href="/anime/{{ anime['slug'] }}">
+      {% if anime['is_airing'] %}<span class="badge-airing">放送中</span>{% endif %}
+      <h2>{{ anime['title'] }}</h2>
+      <p class="card-meta">{{ anime['release_year'] }}年 ・ 全{{ anime['episode_count'] }}話</p>
+      <p class="card-genre">{{ anime['genre'] }}</p>
+    </a>
+    {% endfor %}
+  </div>
+</section>
+{% endblock %}

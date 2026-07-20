@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block title %}ジャンル一覧 | DOKOMIRU{% endblock %}
+{% block description %}異世界、恋愛、バトル、スポーツなど、ジャンル別にアニメをまとめて探せます。気になるジャンルから配信サービスをチェックしましょう。{% endblock %}
+
+{% block content %}
+<section class="hero">
+  <h1>ジャンルから探す</h1>
+  <p class="hero-sub">気になるジャンルをタップして、作品一覧をチェックしましょう。</p>
+</section>
+
+<section class="list-wrap">
+  <div class="genre-grid">
+    {% for g, count in genre_counts %}
+    <a class="genre-tile" href="/genre/{{ g }}">
+      <span class="genre-tile-name">{{ g }}</span>
+      <span class="genre-tile-count">{{ count }}作品</span>
+    </a>
+    {% endfor %}
+  </div>
+</section>
+{% endblock %}

@@ -1,0 +1,25 @@
+{% extends "base_en.html" %}
+
+{% block title %}{{ genre_name }} Anime | DOKOMIRU{% endblock %}
+{% block description %}A list of {{ genre_name }} anime titles, along with where to watch each one legally.{% endblock %}
+
+{% block content %}
+<section class="hero">
+  <p class="eyebrow"><a href="/en/genres" class="genre-back-link">← All genres</a></p>
+  <h1>{{ genre_name }}<span class="hl"> Anime</span></h1>
+  <p class="hero-sub">{{ anime_list|length }} title(s)</p>
+</section>
+
+<section class="list-wrap">
+  <div class="anime-grid">
+    {% for anime in anime_list %}
+    <a class="anime-card" href="/en/anime/{{ anime['slug'] }}">
+      {% if anime['is_airing'] %}<span class="badge-airing">Airing</span>{% endif %}
+      <h2>{{ anime['title_en'] }}</h2>
+      <p class="card-meta">{{ anime['release_year'] }} ・ {{ anime['episode_count'] }} episodes</p>
+      <p class="card-genre">{{ anime['genre_en'] }}</p>
+    </a>
+    {% endfor %}
+  </div>
+</section>
+{% endblock %}

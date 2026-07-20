@@ -8,7 +8,12 @@
   <div class="detail-head">
     {% if anime['is_airing'] %}<span class="badge-airing">放送中</span>{% endif %}
     <h1>{{ anime['title'] }}</h1>
-    <p class="detail-meta">{{ anime['release_year'] }}年 ・ 全{{ anime['episode_count'] }}話 ・ {{ anime['genre'] }}</p>
+    <p class="detail-meta">{{ anime['release_year'] }}年 ・ 全{{ anime['episode_count'] }}話</p>
+    <div class="genre-tags">
+      {% for g in anime['genre'].split(',') %}
+      <a class="genre-tag" href="/genre/{{ g.strip() }}">{{ g.strip() }}</a>
+      {% endfor %}
+    </div>
   </div>
 
   <p class="detail-synopsis">{{ anime['synopsis'] }}</p>

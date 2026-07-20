@@ -860,6 +860,72 @@ ANIME = [
             {"service": "Disney+", "plan_type": "subscription", "watch_url": "https://www.disneyplus.com/ja-jp"},
         ],
     },
+    {
+        "slug": "tokyo-ghoul",
+        "title": "東京喰種トーキョーグール",
+        "title_kana": "とうきょうぐーる",
+        "title_en": "Tokyo Ghoul",
+        "synopsis_en": "An ordinary college student barely survives an attack by a ghoul — a human-eating creature disguised as a person — and wakes up half-ghoul himself, forced to navigate a hidden world where humans and ghouls are locked in violent conflict.",
+        "genre_en": "Dark Fantasy, Action",
+        "synopsis": "人を喰らう「喰種」に襲われた平凡な大学生は、一命を取り留めるも自らも半喰種の体になってしまう。"
+                    "人間と喰種、どちらの世界にも属せない少年が、その狭間で葛藤しながら生きていくダークファンタジー。",
+        "episode_count": 12,
+        "release_year": 2014,
+        "genre": "ダークファンタジー,アクション",
+        "is_airing": 0,
+        "availability": [
+            {"service": "Abema", "plan_type": "subscription", "watch_url": "https://abema.tv/"},
+            {"service": "dアニメストア", "plan_type": "subscription", "watch_url": "https://anime.dmkt-sp.jp/"},
+            {"service": "DMM TV", "plan_type": "subscription", "watch_url": "https://tv.dmm.com/vod/"},
+            {"service": "U-NEXT", "plan_type": "subscription", "watch_url": "https://video.unext.jp/"},
+            {"service": "Hulu", "plan_type": "subscription", "watch_url": "https://www.hulu.jp/"},
+            {"service": "Netflix", "plan_type": "subscription", "watch_url": "https://www.netflix.com/jp/"},
+            {"service": "Disney+", "plan_type": "subscription", "watch_url": "https://www.disneyplus.com/ja-jp"},
+        ],
+    },
+    {
+        "slug": "one-punch-man",
+        "title": "ワンパンマン",
+        "title_kana": "わんぱんまん",
+        "title_en": "One Punch Man",
+        "synopsis_en": "Saitama can defeat any enemy with a single punch, which has left him bored with the very concept of being a hero. His search for a worthy opponent turns this over-the-top parody of the superhero genre into a hilarious action spectacle.",
+        "genre_en": "Action, Comedy",
+        "synopsis": "どんな敵も一撃で倒せてしまうがゆえに、ヒーローという行為そのものに退屈しきってしまった男・サイタマ。"
+                    "強すぎるがゆえの悩みを抱えながら、歯応えのある敵を求めて戦い続ける、痛快バトルコメディ。",
+        "episode_count": 12,
+        "release_year": 2015,
+        "genre": "アクション,コメディ",
+        "is_airing": 0,
+        "availability": [
+            {"service": "Abema", "plan_type": "subscription", "watch_url": "https://abema.tv/"},
+            {"service": "dアニメストア", "plan_type": "subscription", "watch_url": "https://anime.dmkt-sp.jp/"},
+            {"service": "DMM TV", "plan_type": "subscription", "watch_url": "https://tv.dmm.com/vod/"},
+            {"service": "U-NEXT", "plan_type": "subscription", "watch_url": "https://video.unext.jp/"},
+            {"service": "Hulu", "plan_type": "subscription", "watch_url": "https://www.hulu.jp/"},
+            {"service": "Netflix", "plan_type": "subscription", "watch_url": "https://www.netflix.com/jp/"},
+            {"service": "Disney+", "plan_type": "subscription", "watch_url": "https://www.disneyplus.com/ja-jp"},
+        ],
+    },
+    {
+        "slug": "yakusoku-no-neverland",
+        "title": "約束のネバーランド",
+        "title_kana": "やくそくのねばーらんど",
+        "title_en": "The Promised Neverland",
+        "synopsis_en": "The children of an idyllic orphanage discover the horrifying truth behind their sheltered lives and band together to escape before they meet the same fate as the friend they lost.",
+        "genre_en": "Mystery, Dark Fantasy",
+        "synopsis": "楽園のような孤児院で幸せに暮らしていた子どもたちは、その裏に隠された恐ろしい真実を知ってしまう。"
+                    "仲間を失う前に、全員での脱獄を目指して知略を尽くす少年少女たちを描くミステリーサスペンス。",
+        "episode_count": 12,
+        "release_year": 2019,
+        "genre": "ミステリー,ダークファンタジー",
+        "is_airing": 0,
+        "availability": [
+            {"service": "dアニメストア", "plan_type": "subscription", "watch_url": "https://anime.dmkt-sp.jp/"},
+            {"service": "DMM TV", "plan_type": "subscription", "watch_url": "https://tv.dmm.com/vod/"},
+            {"service": "U-NEXT", "plan_type": "subscription", "watch_url": "https://video.unext.jp/"},
+            {"service": "Hulu", "plan_type": "subscription", "watch_url": "https://www.hulu.jp/"},
+        ],
+    },
 ]
 
 
@@ -1036,6 +1102,21 @@ SEASONS = {
         {"label": "シーズン3", "subtitle": None, "kind": "tv", "release_year": 2022, "episode_count": 13},
         {"label": "劇場版", "subtitle": "ファーストキッスは終わらない", "kind": "movie", "release_year": 2022, "episode_count": None},
         {"label": "OVA", "subtitle": "大人への階段", "kind": "movie", "release_year": 2023, "episode_count": None},
+    ],
+    "tokyo-ghoul": [
+        {"label": "シーズン1", "subtitle": None, "kind": "tv", "release_year": 2014, "episode_count": 12},
+        {"label": "シーズン2", "subtitle": "√A", "kind": "tv", "release_year": 2015, "episode_count": 12},
+        {"label": "シーズン3", "subtitle": ":re", "kind": "tv", "release_year": 2018, "episode_count": 12},
+        {"label": "シーズン4", "subtitle": ":re 最終章", "kind": "tv", "release_year": 2018, "episode_count": 12},
+    ],
+    "one-punch-man": [
+        {"label": "シーズン1", "subtitle": None, "kind": "tv", "release_year": 2015, "episode_count": 12},
+        {"label": "シーズン2", "subtitle": None, "kind": "tv", "release_year": 2019, "episode_count": 12},
+        {"label": "シーズン3", "subtitle": None, "kind": "tv", "release_year": 2025, "episode_count": None},
+    ],
+    "yakusoku-no-neverland": [
+        {"label": "シーズン1", "subtitle": None, "kind": "tv", "release_year": 2019, "episode_count": 12},
+        {"label": "シーズン2", "subtitle": None, "kind": "tv", "release_year": 2021, "episode_count": 11},
     ],
 }
 

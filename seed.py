@@ -771,6 +771,95 @@ ANIME = [
             {"service": "Netflix", "plan_type": "subscription", "watch_url": "https://www.netflix.com/jp/"},
         ],
     },
+    {
+        "slug": "ao-no-hako",
+        "title": "アオのハコ",
+        "title_kana": "あおのはこ",
+        "title_en": "Blue Box",
+        "synopsis_en": "A boy on the badminton team quietly admires the star basketball player who's also his upperclassman, and now suddenly his housemate. This is a tender, slow-burn portrait of first love set against the backdrop of club activities.",
+        "genre_en": "Romance, Youth, Sports",
+        "synopsis": "バドミントン部の少年は、憧れの先輩でバスケ部のエースと、ひょんなことから同居生活を始めることに。"
+                    "部活と恋、それぞれに真剣に向き合う高校生たちの、等身大の青春を丁寧に描くラブストーリー。",
+        "episode_count": 25,
+        "release_year": 2024,
+        "genre": "恋愛,青春,スポーツ",
+        "is_airing": 0,
+        "availability": [
+            {"service": "Abema", "plan_type": "subscription", "watch_url": "https://abema.tv/"},
+            {"service": "dアニメストア", "plan_type": "subscription", "watch_url": "https://anime.dmkt-sp.jp/"},
+            {"service": "DMM TV", "plan_type": "subscription", "watch_url": "https://tv.dmm.com/vod/"},
+            {"service": "U-NEXT", "plan_type": "subscription", "watch_url": "https://video.unext.jp/"},
+            {"service": "Hulu", "plan_type": "subscription", "watch_url": "https://www.hulu.jp/"},
+            {"service": "Netflix", "plan_type": "subscription", "watch_url": "https://www.netflix.com/jp/"},
+            {"service": "Disney+", "plan_type": "subscription", "watch_url": "https://www.disneyplus.com/ja-jp"},
+        ],
+    },
+    {
+        "slug": "youzitsu",
+        "title": "ようこそ実力至上主義の教室へ",
+        "title_kana": "ようこそじつりょくしじょうしゅぎのきょうしつへ",
+        "title_en": "Classroom of the Elite",
+        "synopsis_en": "At a prestigious high school where students are ranked and rewarded purely on merit, the aloof Kiyotaka Ayanomiya is placed in the lowest-ranked class — and slowly reveals a sharp, calculating mind beneath his indifferent exterior.",
+        "genre_en": "Psychological, School, Drama",
+        "synopsis": "進学率・就職率100%を誇る名門校、東京都高度育成高等学校。実力至上主義を掲げるこの学校で、"
+                    "最下位クラスに配属されたやる気のない少年・綾小路清隆が、その裏に隠された知略を静かに発揮していく心理戦学園ドラマ。",
+        "episode_count": 12,
+        "release_year": 2017,
+        "genre": "心理戦,学園,ドラマ",
+        "is_airing": 1,
+        "availability": [
+            {"service": "Abema", "plan_type": "subscription", "watch_url": "https://abema.tv/"},
+            {"service": "dアニメストア", "plan_type": "subscription", "watch_url": "https://anime.dmkt-sp.jp/"},
+            {"service": "U-NEXT", "plan_type": "subscription", "watch_url": "https://video.unext.jp/"},
+            {"service": "Hulu", "plan_type": "subscription", "watch_url": "https://www.hulu.jp/"},
+            {"service": "Netflix", "plan_type": "subscription", "watch_url": "https://www.netflix.com/jp/"},
+        ],
+    },
+    {
+        "slug": "kage-no-jitsuryokusha",
+        "title": "陰の実力者になりたくて！",
+        "title_kana": "かげのじつりょくしゃになりたくて",
+        "title_en": "The Eminence in Shadow",
+        "synopsis_en": "A boy obsessed with the fantasy of being a mysterious \"man behind the shadows\" dies and is reincarnated into another world, where his make-believe secret organization turns out to be dangerously real.",
+        "genre_en": "Fantasy, Action, Comedy",
+        "synopsis": "「陰の実力者」に憧れていた少年は事故で命を落とし、異世界に転生。妄想で作り上げた「闇の組織」設定を"
+                    "楽しんでいたはずが、いつの間にか本物の陰の実力者として、世界の裏側を動かしていくことになる異世界コメディ。",
+        "episode_count": 20,
+        "release_year": 2022,
+        "genre": "ファンタジー,アクション,コメディ",
+        "is_airing": 0,
+        "availability": [
+            {"service": "Abema", "plan_type": "subscription", "watch_url": "https://abema.tv/"},
+            {"service": "dアニメストア", "plan_type": "subscription", "watch_url": "https://anime.dmkt-sp.jp/"},
+            {"service": "U-NEXT", "plan_type": "subscription", "watch_url": "https://video.unext.jp/"},
+            {"service": "Hulu", "plan_type": "subscription", "watch_url": "https://www.hulu.jp/"},
+            {"service": "Netflix", "plan_type": "subscription", "watch_url": "https://www.netflix.com/jp/"},
+            {"service": "Disney+", "plan_type": "subscription", "watch_url": "https://www.disneyplus.com/ja-jp"},
+        ],
+    },
+    {
+        "slug": "kaguya-sama",
+        "title": "かぐや様は告らせたい",
+        "title_kana": "かぐやさまはこくらせたい",
+        "title_en": "Kaguya-sama: Love Is War",
+        "synopsis_en": "The president and vice president of an elite school's student council are both geniuses and both secretly in love with each other — but neither will admit it first, turning their courtship into an elaborate battle of wits.",
+        "genre_en": "Romantic Comedy, School",
+        "synopsis": "名門学園の生徒会長と副会長は、互いに好意を寄せながらも、先に告白した方が「負け」というプライドから、"
+                    "相手に告白させようと日々頭脳戦を繰り広げる天才たちの恋愛コメディ。",
+        "episode_count": 12,
+        "release_year": 2019,
+        "genre": "ラブコメ,学園",
+        "is_airing": 0,
+        "availability": [
+            {"service": "Abema", "plan_type": "subscription", "watch_url": "https://abema.tv/"},
+            {"service": "dアニメストア", "plan_type": "subscription", "watch_url": "https://anime.dmkt-sp.jp/"},
+            {"service": "DMM TV", "plan_type": "subscription", "watch_url": "https://tv.dmm.com/vod/"},
+            {"service": "U-NEXT", "plan_type": "subscription", "watch_url": "https://video.unext.jp/"},
+            {"service": "Hulu", "plan_type": "subscription", "watch_url": "https://www.hulu.jp/"},
+            {"service": "Netflix", "plan_type": "subscription", "watch_url": "https://www.netflix.com/jp/"},
+            {"service": "Disney+", "plan_type": "subscription", "watch_url": "https://www.disneyplus.com/ja-jp"},
+        ],
+    },
 ]
 
 
@@ -926,6 +1015,27 @@ SEASONS = {
     "makeine": [
         {"label": "シーズン1", "subtitle": None, "kind": "tv", "release_year": 2024, "episode_count": 12},
         {"label": "シーズン2", "subtitle": "制作決定", "kind": "tv", "release_year": None, "episode_count": None},
+    ],
+    "ao-no-hako": [
+        {"label": "シーズン1", "subtitle": None, "kind": "tv", "release_year": 2024, "episode_count": 25},
+        {"label": "シーズン2", "subtitle": None, "kind": "tv", "release_year": 2026, "episode_count": None},
+    ],
+    "youzitsu": [
+        {"label": "シーズン1", "subtitle": None, "kind": "tv", "release_year": 2017, "episode_count": 12},
+        {"label": "シーズン2", "subtitle": None, "kind": "tv", "release_year": 2022, "episode_count": 13},
+        {"label": "シーズン3", "subtitle": None, "kind": "tv", "release_year": 2024, "episode_count": 13},
+        {"label": "シーズン4", "subtitle": "2年生1学期", "kind": "tv", "release_year": 2026, "episode_count": None},
+    ],
+    "kage-no-jitsuryokusha": [
+        {"label": "シーズン1", "subtitle": None, "kind": "tv", "release_year": 2022, "episode_count": 20},
+        {"label": "シーズン2", "subtitle": None, "kind": "tv", "release_year": 2023, "episode_count": 12},
+    ],
+    "kaguya-sama": [
+        {"label": "シーズン1", "subtitle": None, "kind": "tv", "release_year": 2019, "episode_count": 12},
+        {"label": "シーズン2", "subtitle": None, "kind": "tv", "release_year": 2020, "episode_count": 12},
+        {"label": "シーズン3", "subtitle": None, "kind": "tv", "release_year": 2022, "episode_count": 13},
+        {"label": "劇場版", "subtitle": "ファーストキッスは終わらない", "kind": "movie", "release_year": 2022, "episode_count": None},
+        {"label": "OVA", "subtitle": "大人への階段", "kind": "movie", "release_year": 2023, "episode_count": None},
     ],
 }
 

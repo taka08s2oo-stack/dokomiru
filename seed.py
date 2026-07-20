@@ -187,12 +187,12 @@ ANIME = [
         "title_kana": "めいたんていこなん",
         "title_en": 'Detective Conan (Case Closed)',
         "synopsis_en": "A high school detective is shrunk into a child's body by a mysterious poison and continues solving cases undercover while searching for the organization responsible.",
-        "genre_en": 'Mystery, Detective',
+        "genre_en": 'Mystery',
         "synopsis": "謎の組織に薬を飲まされ小学生の姿にされてしまった高校生探偵が、"
                     "正体を隠しながら数々の難事件を解決していく国民的推理アニメ。",
         "episode_count": 1000,
         "release_year": 1996,
-        "genre": "ミステリー,推理",
+        "genre": "ミステリー",
         "is_airing": 1,
         "availability": [
             {"service": "Netflix", "plan_type": "subscription", "watch_url": "https://www.netflix.com/jp/"},
@@ -235,7 +235,7 @@ ANIME = [
                     "彼女たちとの交流を通じて絆を深めていくラブコメディ。",
         "episode_count": 12,
         "release_year": 2019,
-        "genre": "ラブコメ,学園",
+        "genre": "恋愛,学園",
         "is_airing": 0,
         "availability": [
             {"service": "dアニメストア", "plan_type": "subscription", "watch_url": "https://anime.dmkt-sp.jp/"},
@@ -383,12 +383,12 @@ ANIME = [
         "title_kana": "くすりやのひとりごと",
         "title_en": 'The Apothecary Diaries',
         "synopsis_en": 'A skilled young apothecary sold into servitude at the imperial palace uses her knowledge of medicine to solve mysteries and poisonings within the inner court.',
-        "genre_en": 'Mystery, Historical Fantasy',
+        "genre_en": 'Mystery, Fantasy',
         "synopsis": "後宮に下働きとして売られた薬師の少女が、持ち前の知識で"
                     "宮廷内の謎や事件を解き明かしていく中華風ミステリー。",
         "episode_count": 24,
         "release_year": 2023,
-        "genre": "ミステリー,中華ファンタジー",
+        "genre": "ミステリー,ファンタジー",
         "is_airing": 0,
         "availability": [
             {"service": "Netflix", "plan_type": "subscription", "watch_url": "https://www.netflix.com/jp/"},
@@ -493,7 +493,7 @@ ANIME = [
         "title_kana": "う゛ぃんらんどさが",
         "title_en": 'Vinland Saga',
         "synopsis_en": 'After his father is killed by mercenaries, a young boy joins the very band responsible for the murder, waiting for his chance at revenge amid the chaos of war.',
-        "genre_en": 'Action, Historical Drama',
+        "genre_en": 'Action, Historical',
         "synopsis": "父を殺された少年トルフィンは、仇である傭兵団に加わり復讐の機会をうかがう。"
                     "戦いに明け暮れる日々の中で、彼が本当に求めるべきものは何かが問われていく歴史群像劇。",
         "episode_count": 48,
@@ -560,12 +560,12 @@ ANIME = [
         "title_kana": "ぶるーろっく",
         "title_en": 'Blue Lock',
         "synopsis_en": "300 of Japan's most talented young strikers are gathered into an unconventional training program designed to produce a single egotistical striker capable of leading the national team to a World Cup win.",
-        "genre_en": 'Sports, Soccer',
+        "genre_en": 'Sports',
         "synopsis": "日本サッカーをW杯優勝に導く「エゴイスト」ストライカーを育成するため、"
                     "300人の高校生FWたちが生き残りをかけて競い合う異色のサッカー育成プロジェクトを描く。",
         "episode_count": 38,
         "release_year": 2022,
-        "genre": "スポーツ,サッカー",
+        "genre": "スポーツ",
         "is_airing": 0,
         "availability": [
             {"service": "Abema", "plan_type": "subscription", "watch_url": "https://abema.tv/"},
@@ -688,12 +688,12 @@ ANIME = [
         "title_kana": "にげじょうずのわかぎみ",
         "title_en": "The Elusive Samurai",
         "synopsis_en": "When the Kamakura shogunate falls to betrayal, its rightful heir Tokiyuki loses everything in a single night. Armed with nothing but his talent for running away, he sets out to reclaim what was taken from him.",
-        "genre_en": "Historical, Action, Battle",
+        "genre_en": "Historical, Action",
         "synopsis": "鎌倉幕府滅亡の混乱の中、正統な後継者である北条時行は幕臣の裏切りによって全てを失う。"
                     "生き延びるため「逃げる」ことを武器に、仲間と共に天下を取り戻す戦いに挑む歴史活劇。",
         "episode_count": 12,
         "release_year": 2024,
-        "genre": "歴史,アクション,バトル",
+        "genre": "歴史,アクション",
         "is_airing": 1,
         "availability": [
             {"service": "dアニメストア", "plan_type": "subscription", "watch_url": "https://anime.dmkt-sp.jp/"},
@@ -733,12 +733,12 @@ ANIME = [
         "title_kana": "ましゅる",
         "title_en": "Mashle: Magic and Muscles",
         "synopsis_en": "Born without magic in a world where magic is everything, Mash relies on nothing but raw muscle to punch his way through a school of elite wizards.",
-        "genre_en": "Battle, Comedy, School",
+        "genre_en": "Action, Comedy, School",
         "synopsis": "魔法が絶対の世界に生まれながら魔力を持たない少年マッシュは、圧倒的な筋肉だけを武器に、"
                     "魔法使いたちの学校で成り上がっていく規格外バトルコメディ。",
         "episode_count": 12,
         "release_year": 2023,
-        "genre": "バトル,コメディ,学園",
+        "genre": "アクション,コメディ,学園",
         "is_airing": 0,
         "availability": [
             {"service": "dアニメストア", "plan_type": "subscription", "watch_url": "https://anime.dmkt-sp.jp/"},
@@ -843,12 +843,12 @@ ANIME = [
         "title_kana": "かぐやさまはこくらせたい",
         "title_en": "Kaguya-sama: Love Is War",
         "synopsis_en": "The president and vice president of an elite school's student council are both geniuses and both secretly in love with each other — but neither will admit it first, turning their courtship into an elaborate battle of wits.",
-        "genre_en": "Romantic Comedy, School",
+        "genre_en": "Romance, School",
         "synopsis": "名門学園の生徒会長と副会長は、互いに好意を寄せながらも、先に告白した方が「負け」というプライドから、"
                     "相手に告白させようと日々頭脳戦を繰り広げる天才たちの恋愛コメディ。",
         "episode_count": 12,
         "release_year": 2019,
-        "genre": "ラブコメ,学園",
+        "genre": "恋愛,学園",
         "is_airing": 0,
         "availability": [
             {"service": "Abema", "plan_type": "subscription", "watch_url": "https://abema.tv/"},
@@ -924,6 +924,73 @@ ANIME = [
             {"service": "DMM TV", "plan_type": "subscription", "watch_url": "https://tv.dmm.com/vod/"},
             {"service": "U-NEXT", "plan_type": "subscription", "watch_url": "https://video.unext.jp/"},
             {"service": "Hulu", "plan_type": "subscription", "watch_url": "https://www.hulu.jp/"},
+        ],
+    },
+    {
+        "slug": "naruto",
+        "title": "NARUTO -ナルト-",
+        "title_kana": "なると",
+        "title_en": "Naruto",
+        "synopsis_en": "Naruto Uzumaki, a young ninja shunned by his village for the fox spirit sealed within him, dreams of becoming Hokage — the village's strongest and most respected leader — and sets out to earn that recognition the hard way.",
+        "genre_en": "Action, Adventure",
+        "synopsis": "里の人々から疎まれながら育った忍者・うずまきナルトは、里の頂点である「火影」になることを夢見て、"
+                    "仲間たちと共に数々の試練を乗り越えていく王道忍者アクション。",
+        "episode_count": 220,
+        "release_year": 2002,
+        "genre": "アクション,冒険",
+        "is_airing": 0,
+        "availability": [
+            {"service": "Abema", "plan_type": "subscription", "watch_url": "https://abema.tv/"},
+            {"service": "dアニメストア", "plan_type": "subscription", "watch_url": "https://anime.dmkt-sp.jp/"},
+            {"service": "DMM TV", "plan_type": "subscription", "watch_url": "https://tv.dmm.com/vod/"},
+            {"service": "U-NEXT", "plan_type": "subscription", "watch_url": "https://video.unext.jp/"},
+            {"service": "Hulu", "plan_type": "subscription", "watch_url": "https://www.hulu.jp/"},
+            {"service": "Netflix", "plan_type": "subscription", "watch_url": "https://www.netflix.com/jp/"},
+        ],
+    },
+    {
+        "slug": "bleach",
+        "title": "BLEACH",
+        "title_kana": "ぶりーち",
+        "title_en": "Bleach",
+        "synopsis_en": "High schooler Ichigo Kurosaki, who can already see ghosts, gains the powers of a Soul Reaper after a chance encounter and takes on the duty of guiding lost souls while fighting off the evil spirits that prey on them.",
+        "genre_en": "Action, Supernatural",
+        "synopsis": "幽霊が見える高校生・黒崎一護は、ひょんなことから死神の力を受け継ぎ、悪霊「虚」と戦いながら"
+                    "死者の魂をあの世へと導く「死神代行」としての戦いに身を投じていく人気アクション。",
+        "episode_count": 366,
+        "release_year": 2004,
+        "genre": "アクション,SF",
+        "is_airing": 1,
+        "availability": [
+            {"service": "Abema", "plan_type": "subscription", "watch_url": "https://abema.tv/"},
+            {"service": "dアニメストア", "plan_type": "subscription", "watch_url": "https://anime.dmkt-sp.jp/"},
+            {"service": "DMM TV", "plan_type": "subscription", "watch_url": "https://tv.dmm.com/vod/"},
+            {"service": "U-NEXT", "plan_type": "subscription", "watch_url": "https://video.unext.jp/"},
+            {"service": "Hulu", "plan_type": "subscription", "watch_url": "https://www.hulu.jp/"},
+            {"service": "Netflix", "plan_type": "subscription", "watch_url": "https://www.netflix.com/jp/"},
+            {"service": "Disney+", "plan_type": "subscription", "watch_url": "https://www.disneyplus.com/ja-jp"},
+        ],
+    },
+    {
+        "slug": "death-note",
+        "title": "DEATH NOTE -デスノート-",
+        "title_kana": "ですのーと",
+        "title_en": "Death Note",
+        "synopsis_en": "A brilliant but bored high schooler discovers a notebook that kills anyone whose name is written in it, and sets out to remake the world into one without crime — drawing the attention of an equally brilliant detective determined to stop him.",
+        "genre_en": "Psychological, Mystery, Dark Fantasy",
+        "synopsis": "退屈を持て余していた天才高校生は、名前を書かれた人間を死なせる「デスノート」を手に入れ、"
+                    "犯罪者のいない理想の世界を作ろうとする。彼を止めるべく現れた天才探偵Lとの、頭脳戦の応酬を描く心理サスペンス。",
+        "episode_count": 37,
+        "release_year": 2006,
+        "genre": "心理戦,ミステリー,ダークファンタジー",
+        "is_airing": 0,
+        "availability": [
+            {"service": "Abema", "plan_type": "subscription", "watch_url": "https://abema.tv/"},
+            {"service": "dアニメストア", "plan_type": "subscription", "watch_url": "https://anime.dmkt-sp.jp/"},
+            {"service": "DMM TV", "plan_type": "subscription", "watch_url": "https://tv.dmm.com/vod/"},
+            {"service": "U-NEXT", "plan_type": "subscription", "watch_url": "https://video.unext.jp/"},
+            {"service": "Hulu", "plan_type": "subscription", "watch_url": "https://www.hulu.jp/"},
+            {"service": "Netflix", "plan_type": "subscription", "watch_url": "https://www.netflix.com/jp/"},
         ],
     },
 ]
@@ -1117,6 +1184,19 @@ SEASONS = {
     "yakusoku-no-neverland": [
         {"label": "シーズン1", "subtitle": None, "kind": "tv", "release_year": 2019, "episode_count": 12},
         {"label": "シーズン2", "subtitle": None, "kind": "tv", "release_year": 2021, "episode_count": 11},
+    ],
+    "naruto": [
+        {"label": "NARUTO -ナルト-", "subtitle": None, "kind": "tv", "release_year": 2002, "episode_count": 220},
+        {"label": "NARUTO -ナルト- 疾風伝", "subtitle": None, "kind": "tv", "release_year": 2007, "episode_count": 500},
+        {"label": "BORUTO", "subtitle": "-ボルト- NARUTO NEXT GENERATIONS", "kind": "tv", "release_year": 2017, "episode_count": None},
+    ],
+    "bleach": [
+        {"label": "BLEACH", "subtitle": None, "kind": "tv", "release_year": 2004, "episode_count": 366},
+        {"label": "BLEACH 千年血戦篇", "subtitle": None, "kind": "tv", "release_year": 2022, "episode_count": None},
+    ],
+    "death-note": [
+        {"label": "DEATH NOTE -デスノート-", "subtitle": None, "kind": "tv", "release_year": 2006, "episode_count": 37},
+        {"label": "総集編", "subtitle": "リライト", "kind": "movie", "release_year": 2007, "episode_count": None},
     ],
 }
 

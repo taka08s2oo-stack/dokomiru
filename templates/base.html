@@ -31,6 +31,7 @@
 <meta name="twitter:title" content="{{ self.title() }}">
 <meta name="twitter:description" content="{{ self.description() }}">
 <meta name="twitter:image" content="{{ request.url_root.rstrip('/') }}{{ url_for('static', filename='og-image.png') }}">
+{% block structured_data %}{% endblock %}
 </head>
 <body>
 

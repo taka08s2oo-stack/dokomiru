@@ -31,6 +31,7 @@
 <meta name="twitter:title" content="{{ self.title() }}">
 <meta name="twitter:description" content="{{ self.description() }}">
 <meta name="twitter:image" content="{{ request.url_root.rstrip('/') }}{{ url_for('static', filename='og-image-en.png') }}">
+{% block structured_data %}{% endblock %}
 </head>
 <body>
 
@@ -50,6 +51,8 @@
 <footer>
   <nav class="footer-nav">
     <a href="/en/genres">Genres</a>
+    <span class="footer-sep">・</span>
+    <a href="/en/guides">Guides</a>
     <span class="footer-sep">・</span>
     <a href="/en/about">About</a>
     <span class="footer-sep">・</span>

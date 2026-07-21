@@ -3,6 +3,21 @@
 {% block title %}Where to Watch {{ anime['title_en'] }} | DOKOMIRU{% endblock %}
 {% block description %}Find out which legal streaming services carry {{ anime['title_en'] }} — Netflix, Crunchyroll, Disney+, Hulu and more.{% endblock %}
 
+{% block structured_data %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TVSeries",
+  "name": {{ anime['title_en']|tojson }},
+  "description": {{ anime['synopsis_en']|tojson }},
+  "genre": {{ anime['genre_en'].split(',')|map('trim')|list|tojson }},
+  "datePublished": {{ anime['release_year']|string|tojson }},
+  "numberOfEpisodes": {{ anime['episode_count']|tojson }},
+  "url": {{ (request.url_root.rstrip('/') + '/en/anime/' + anime['slug'])|tojson }}
+}
+</script>
+{% endblock %}
+
 {% block content %}
 <article class="detail">
   <div class="detail-head">

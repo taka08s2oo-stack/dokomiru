@@ -1,5 +1,21 @@
 {% extends "base.html" %}
 
+{% block structured_data %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "DOKOMIRU",
+  "url": "{{ request.url_root.rstrip('/') }}/",
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": "{{ request.url_root.rstrip('/') }}/?q={search_term_string}",
+    "query-input": "required name=search_term_string"
+  }
+}
+</script>
+{% endblock %}
+
 {% block content %}
 <section class="hero">
   <p class="eyebrow">アニメ、どこで配信してるか毎回検索してませんか?</p>
@@ -7,9 +23,36 @@
   <p class="hero-sub">正規配信サービスだけをまとめて検索。違法サイトは一切扱いません。</p>
 </section>
 
+<section class="filter-wrap">
+  <form class="filter-form" action="/" method="get">
+    {% if query %}<input type="hidden" name="q" value="{{ query }}">{% endif %}
+    <div class="filter-group">
+      <label for="genre-select">ジャンル</label>
+      <select id="genre-select" name="genre" onchange="this.form.submit()">
+        <option value="">すべて</option>
+        {% for g in all_genres %}
+        <option value="{{ g }}" {% if g == selected_genre %}selected{% endif %}>{{ g }}</option>
+        {% endfor %}
+      </select>
+    </div>
+    <div class="filter-group">
+      <label for="service-select">配信サービス</label>
+      <select id="service-select" name="service" onchange="this.form.submit()">
+        <option value="">すべて</option>
+        {% for s in all_services %}
+        <option value="{{ s }}" {% if s == selected_service %}selected{% endif %}>{{ s }}</option>
+        {% endfor %}
+      </select>
+    </div>
+    {% if selected_genre or selected_service %}
+    <a class="filter-clear" href="/{% if query %}?q={{ query }}{% endif %}">絞り込み解除</a>
+    {% endif %}
+  </form>
+</section>
+
 <section class="list-wrap">
-  {% if query %}
-    <p class="result-count">「{{ query }}」の検索結果: {{ anime_list|length }}件</p>
+  {% if query or selected_genre or selected_service %}
+    <p class="result-count">検索結果: {{ anime_list|length }}件</p>
   {% endif %}
 
   {% if anime_list %}

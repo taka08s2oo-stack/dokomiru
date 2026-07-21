@@ -3,6 +3,21 @@
 {% block title %}{{ anime['title'] }}はどこで見れる?配信サービス一覧 | DOKOMIRU{% endblock %}
 {% block description %}{{ anime['title'] }}が視聴できる配信サービスをまとめました。Abema、Netflix、dアニメストアなど正規サービスのみ掲載。{% endblock %}
 
+{% block structured_data %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TVSeries",
+  "name": {{ anime['title']|tojson }},
+  "description": {{ anime['synopsis']|tojson }},
+  "genre": {{ anime['genre'].split(',')|map('trim')|list|tojson }},
+  "datePublished": {{ anime['release_year']|string|tojson }},
+  "numberOfEpisodes": {{ anime['episode_count']|tojson }},
+  "url": {{ (request.url_root.rstrip('/') + '/anime/' + anime['slug'])|tojson }}
+}
+</script>
+{% endblock %}
+
 {% block content %}
 <article class="detail">
   <div class="detail-head">

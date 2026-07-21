@@ -305,22 +305,42 @@ def about_en():
 
 @app.route("/guides")
 def guides():
-    return render_template("guides.html", en_path="/en/")
+    return render_template("guides.html", en_path="/en/guides")
 
 
 @app.route("/guides/service-comparison")
 def guide_service_comparison():
-    return render_template("guide_service_comparison.html", en_path="/en/")
+    return render_template("guide_service_comparison.html", en_path="/en/guides/service-comparison")
 
 
 @app.route("/guides/free-anime")
 def guide_free_anime():
-    return render_template("guide_free_anime.html", en_path="/en/")
+    return render_template("guide_free_anime.html", en_path="/en/guides/free-anime")
 
 
 @app.route("/guides/beginner-guide")
 def guide_beginner():
-    return render_template("guide_beginner.html", en_path="/en/")
+    return render_template("guide_beginner.html", en_path="/en/guides/beginner-guide")
+
+
+@app.route("/en/guides")
+def guides_en():
+    return render_template("guides_en.html", ja_path="/guides")
+
+
+@app.route("/en/guides/service-comparison")
+def guide_service_comparison_en():
+    return render_template("guide_service_comparison_en.html", ja_path="/guides/service-comparison")
+
+
+@app.route("/en/guides/free-anime")
+def guide_free_anime_en():
+    return render_template("guide_free_anime_en.html", ja_path="/guides/free-anime")
+
+
+@app.route("/en/guides/beginner-guide")
+def guide_beginner_en():
+    return render_template("guide_beginner_en.html", ja_path="/guides/beginner-guide")
 
 
 @app.route("/privacy")
@@ -364,6 +384,10 @@ def sitemap():
     xml_parts.append(f"<url><loc>{base_url}/en/privacy</loc></url>")
     xml_parts.append(f"<url><loc>{base_url}/en/contact</loc></url>")
     xml_parts.append(f"<url><loc>{base_url}/en/genres</loc></url>")
+    xml_parts.append(f"<url><loc>{base_url}/en/guides</loc></url>")
+    xml_parts.append(f"<url><loc>{base_url}/en/guides/service-comparison</loc></url>")
+    xml_parts.append(f"<url><loc>{base_url}/en/guides/free-anime</loc></url>")
+    xml_parts.append(f"<url><loc>{base_url}/en/guides/beginner-guide</loc></url>")
     for g, _ in genre_counts:
         xml_parts.append(f"<url><loc>{base_url}/genre/{g}</loc></url>")
     for g, _ in genre_counts_en:
